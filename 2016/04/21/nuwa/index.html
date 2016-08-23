@@ -134,11 +134,15 @@
 <p>2.运行并安装apk，会在app/build/outputs/目录下自动生成一个叫nuwa的目录：</p>
 <p>拷贝此目录到一个指定的目录，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/Users/Documents/nuwa</div></pre></td></tr></table></figure></p>
 <p>此apk目前是有bug的apk, 然后我们修复bug, 修复完毕后进入步骤3</p>
-<p>3.在修复完bug的code base下执行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./gradlew clean nuwaDebugPatch -P NuwaDir=/Users/Documents/nuwa</div></pre></td></tr></table></figure></p>
+<p>3.在Terminal工具执行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#mac使用./gradlew或gradle，windows使用gradlew</div><div class="line">./gradlew clean nuwaDebugPatch -P NuwaDir=/Users/Documents/nuwa</div></pre></td></tr></table></figure></p>
+<p>如果你使用的mac并且无法使用./gradlew，报：Permission denied错误，请执行一次该命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x gradlew</div></pre></td></tr></table></figure></p>
 <p>然后在app/build/outputs/nuwa/debug/目录下会自动生成patch.jar文件：</p>
 <p>此文件就是我们热部署的补丁文件</p>
 <p>4.我们把补丁文件拷贝到sdcard根目录（这边只是为了测试整个hotfix流程， 自己的项目肯定是放在服务器上，我们通过代码自己去下载和存储）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb push app/build/outputs/nuwa/debug/patch.jar /sdcard/</div></pre></td></tr></table></figure></p>
 <p>5.重新启动app，Bug就热修复完成</p>
+<p><b>Tips</b></p>
+<p>如果你使用了多渠道配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">productFlavors &#123;</div><div class="line">    Androidmarket &#123;&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">productFlavors.all &#123; flavor -&gt;</div><div class="line">    flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>执行第三步的时候命令有些区别：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./gradlew clean nuwaAndroidmarketDebugPatch -P NuwaDir=/Users/Documents/nuwa</div></pre></td></tr></table></figure></p>
 <h3 id="三、有哪些坑？"><a href="#三、有哪些坑？" class="headerlink" title="三、有哪些坑？"></a>三、有哪些坑？</h3><p>1.Application类尽可能少引用其他类，以免造成该类被打伤标记无法进行热修复；<br>2.热修复无法修复xml(特别是manifest)、资源，所以如果你的布局或者manifest出错，尽量看看能否在代码里修改，不能的话那就放弃热修复还是使用常规升级修复；<br>3.使用命令生成patch.jar时，有修改的类会连同向下依赖的类一起打包进去，因此打出来包比你想象中大点，如果没有打进去，可能会造成ClassNotFoundException错误；</p>
 
           </section>

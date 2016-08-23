@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-23T09:02:42.000Z</updated>
+  <updated>2016-08-23T11:00:07.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/08/23/Nougat/"/>
     <id>http://yoursite.com/2016/08/23/Nougat/</id>
     <published>2016-08-23T02:06:32.000Z</published>
-    <updated>2016-08-23T09:02:42.000Z</updated>
+    <updated>2016-08-23T11:00:07.000Z</updated>
     
     <content type="html"><![CDATA[<p style="text-align:center"><br><img src="/img/Nougat.png" height="80%" width="80%"><br></p><br>今天 Google 宣布推出 Android 7.0 Nougat 的最终版，Nexus 设备将第一时间获得更新。同时 7.0 源码也已提交给 Android Open Source Project (AOSP) ，这意味着整个 Android 生态系统获得了最新 Android 系统。<br><br>### 设备升级<br>接下来几周 Nexus 6, Nexus 5X, Nexus 6P, Nexus 9, Nexus Player, Pixel C, and General Mobile 4G (Android One) 将获得 Android 7.0 的 OTA 升级。在此之前已加入 Android Beta 计划正在使用 7.0 开发者预览版的设备也将获得最终版升级。<br><p style="text-align:center"><br><img src="/img/Nougat2.png" height="80%" width="80%"><br></p>
 
@@ -53,6 +53,10 @@
     </summary>
     
     
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="Nougat" scheme="http://yoursite.com/tags/Nougat/"/>
+    
   </entry>
   
   <entry>
@@ -60,7 +64,7 @@
     <link href="http://yoursite.com/2016/08/22/JsBridge/"/>
     <id>http://yoursite.com/2016/08/22/JsBridge/</id>
     <published>2016-08-22T15:11:23.000Z</published>
-    <updated>2016-08-23T06:59:00.000Z</updated>
+    <updated>2016-08-23T11:01:38.000Z</updated>
     
     <content type="html"><![CDATA[<p>基于<a href="https://github.com/lzyzsd/JsBridge" target="_blank" rel="external">lzyzsd的JsBridge</a> 优化改进而来的Android JsBridge。</p>
 <p><a href="https://github.com/hjhrq1991/JsBridge" target="_blank" rel="external">工程传送门</a></p>
@@ -95,6 +99,10 @@
     </summary>
     
     
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="JsBridge" scheme="http://yoursite.com/tags/JsBridge/"/>
+    
   </entry>
   
   <entry>
@@ -102,7 +110,7 @@
     <link href="http://yoursite.com/2016/04/21/nuwa/"/>
     <id>http://yoursite.com/2016/04/21/nuwa/</id>
     <published>2016-04-21T07:40:35.000Z</published>
-    <updated>2016-08-23T10:58:57.000Z</updated>
+    <updated>2016-08-23T11:14:01.000Z</updated>
     
     <content type="html"><![CDATA[<p>相信每个开发者在app版本上线后才发现有一个致命性崩溃的bug时，心中是一万只草泥马在奔跑！<br>每次发现这种bug，都只好立马上个小版本修复。这种体验着实糟糕。<br>那我们能不能动态加载一小部分代码来修复这个bug呢？<br>今天给大家带来了女娲nuwa热修复！</p>
 <h3 id="一、什么是热修复？"><a href="#一、什么是热修复？" class="headerlink" title="一、什么是热修复？"></a>一、什么是热修复？</h3><p>热修复补丁（hotfix），又称为patch，指能够修复软件漏洞的一些代码，是一种快速、低成本修复产品软件版本缺陷的方式。<br>具体原理可以查看<a href="http://mp.weixin.qq.com/s?__biz=MzI1MTA1MzM2Nw==&mid=400118620&idx=1&sn=b4fdd5055731290eef12ad0d17f39d4a&scene=0#wechat_redirect" target="_blank" rel="external">鹅厂qq空间热修复。</a></p>
@@ -120,11 +128,15 @@
 <p>2.运行并安装apk，会在app/build/outputs/目录下自动生成一个叫nuwa的目录：</p>
 <p>拷贝此目录到一个指定的目录，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/Users/Documents/nuwa</div></pre></td></tr></table></figure></p>
 <p>此apk目前是有bug的apk, 然后我们修复bug, 修复完毕后进入步骤3</p>
-<p>3.在修复完bug的code base下执行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./gradlew clean nuwaDebugPatch -P NuwaDir=/Users/Documents/nuwa</div></pre></td></tr></table></figure></p>
+<p>3.在Terminal工具执行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#mac使用./gradlew或gradle，windows使用gradlew</div><div class="line">./gradlew clean nuwaDebugPatch -P NuwaDir=/Users/Documents/nuwa</div></pre></td></tr></table></figure></p>
+<p>如果你使用的mac并且无法使用./gradlew，报：Permission denied错误，请执行一次该命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x gradlew</div></pre></td></tr></table></figure></p>
 <p>然后在app/build/outputs/nuwa/debug/目录下会自动生成patch.jar文件：</p>
 <p>此文件就是我们热部署的补丁文件</p>
 <p>4.我们把补丁文件拷贝到sdcard根目录（这边只是为了测试整个hotfix流程， 自己的项目肯定是放在服务器上，我们通过代码自己去下载和存储）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb push app/build/outputs/nuwa/debug/patch.jar /sdcard/</div></pre></td></tr></table></figure></p>
 <p>5.重新启动app，Bug就热修复完成</p>
+<p><b>Tips</b></p>
+<p>如果你使用了多渠道配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">productFlavors &#123;</div><div class="line">    Androidmarket &#123;&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">productFlavors.all &#123; flavor -&gt;</div><div class="line">    flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>执行第三步的时候命令有些区别：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./gradlew clean nuwaAndroidmarketDebugPatch -P NuwaDir=/Users/Documents/nuwa</div></pre></td></tr></table></figure></p>
 <h3 id="三、有哪些坑？"><a href="#三、有哪些坑？" class="headerlink" title="三、有哪些坑？"></a>三、有哪些坑？</h3><p>1.Application类尽可能少引用其他类，以免造成该类被打伤标记无法进行热修复；<br>2.热修复无法修复xml(特别是manifest)、资源，所以如果你的布局或者manifest出错，尽量看看能否在代码里修改，不能的话那就放弃热修复还是使用常规升级修复；<br>3.使用命令生成patch.jar时，有修改的类会连同向下依赖的类一起打包进去，因此打出来包比你想象中大点，如果没有打进去，可能会造成ClassNotFoundException错误；</p>
 ]]></content>
     
@@ -148,7 +160,7 @@
     <link href="http://yoursite.com/2016/03/29/65K/"/>
     <id>http://yoursite.com/2016/03/29/65K/</id>
     <published>2016-03-29T11:44:32.000Z</published>
-    <updated>2016-08-23T02:36:57.000Z</updated>
+    <updated>2016-08-23T11:01:25.000Z</updated>
     
     <content type="html"><![CDATA[<p>Android 65K问题相信困惑了不少人，虽然AS的出来可以通过分dex快速解决65K问题，但是同时也容易因为某些代码没有打包到MainDex里引起NoClassDefFoundError。随着5.0的推出，Android也放出了<a href="http://developer.android.com/tools/building/multidex.html" target="_blank" rel="external">Multidex Support Library</a>来解决这个问题。<br><a href="http://developer.android.com/tools/building/multidex.html" target="_blank" rel="external">Multidex Support Library</a>可以直接分包处理65K问题，并且不会发生NoClassDefFoundError的情况。</p>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>1.使用的话，首先添加依赖库：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//分包multiDexEnabled必须添加该依赖</span></div><div class="line"><span class="keyword">compile</span> <span class="string">'com.android.support:multidex:1.0.1'</span></div></pre></td></tr></table></figure></p>
@@ -174,6 +186,14 @@
     
     </summary>
     
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="65k" scheme="http://yoursite.com/tags/65k/"/>
+    
+      <category term="Multidex" scheme="http://yoursite.com/tags/Multidex/"/>
+    
+      <category term="NoClassDefFoundError" scheme="http://yoursite.com/tags/NoClassDefFoundError/"/>
     
   </entry>
   
