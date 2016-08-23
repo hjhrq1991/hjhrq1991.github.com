@@ -3,7 +3,7 @@
         <meta charset="utf-8">
             
             <title>
-                Android 7.0 Nougat 的最终版发布 | 猪生-秋仔
+                Android-mac下如何使用adb命令 | 猪生-秋仔
             </title>
             <meta content="width=device-width, initial-scale=1" name="viewport">
             <meta name="theme-color" content="#4184f3">
@@ -105,41 +105,29 @@
           <header class="post-header">
           
           </header>
-          <h1 class="post-title">Android 7.0 Nougat 的最终版发布</h1>
+          <h1 class="post-title">Android-mac下如何使用adb命令</h1>
 
           <section class="post-info">
-            <span class="post-date">2016/08/23</span>
+            <span class="post-date">2014/12/25</span>
             
             
             <span class="post-tags">
-              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Android/">Android</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Nougat/">Nougat</a></li></ul>
+              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Android/">Android</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/adb/">adb</a></li></ul>
             </span>
             
           </section>
 
           <section class="post-content">
-            <p style="text-align:center"><br><img src="/img/Nougat/Nougat.png" height="80%" width="80%"><br></p><br>今天 Google 宣布推出 Android 7.0 Nougat 的最终版，Nexus 设备将第一时间获得更新。同时 7.0 源码也已提交给 Android Open Source Project (AOSP) ，这意味着整个 Android 生态系统获得了最新 Android 系统。<br><br>### 设备升级<br>接下来几周 Nexus 6, Nexus 5X, Nexus 6P, Nexus 9, Nexus Player, Pixel C, and General Mobile 4G (Android One) 将获得 Android 7.0 的 OTA 升级。在此之前已加入 Android Beta 计划正在使用 7.0 开发者预览版的设备也将获得最终版升级。<br><p style="text-align:center"><br><img src="/img/Nougat/Nougat2.png" height="80%" width="80%"><br></p>
+            <p>相信在使用mac os X的网友都知道，mac没几个像win上豌豆荚、360助手之类的工具，在mac下做android开发就比较麻烦了，遇到adb中断，或者打包apk，没有工具很难重启adb或者把apk安装到手机上。这时候我们就需要使用adb命令了。<br>可是有些有网友又说，adb用不了，提示：commadb not found</p>
+<p style="text-align:center"><br><img src="/img/ADB/adb1.jpeg"><br></p>
 
-<p>除了以上 Nexus 设备，LG V20 将成为第一款搭载 Android 7.0 Nougat 系统的新手机。随着新系统的正式发布，很快更多搭载新系统的手机也将陆续推出。</p>
-<h3 id="Android-7-0-新功能回顾"><a href="#Android-7-0-新功能回顾" class="headerlink" title="Android 7.0 新功能回顾"></a>Android 7.0 新功能回顾</h3><p>Android 7.0 包含 250 多项主要特性，下面简要介绍一些功能亮点。</p>
-<p style="text-align:center"><br><img src="/img/Nougat/Nougat3.png" height="80%" width="80%"><br></p>
-
-<p><b>更多 emoji 表情：</b>系统内置 1500+ emoji 符号，包括新加入的 72 个。</p>
-<p><b>自定义快速设置：</b>新系统允许你修改系统通知栏的快速设置功能，包括是添加删除以及位置的调整。</p>
-<p><b>多区域支持：</b>设置多种适合自己的语言区域，系统和应用可以更好地体现这点。</p>
-<p></p><p style="text-align:center"><br><img src="/img/Nougat/Nougat4.png" height="80%" width="80%"><br></p><p></p>
-<p><b>多窗口支持：</b>上下或左右同时看到两个应用。</p>
-<p><b>电池优化：</b>Doze 模式更进一步，更省电。</p>
-<p><b>Data Saver：</b>开启 Data Saver 后，后台应用将无法使用移动网络。</p>
-<p><b>通知分组：</b>应用的多条通知信息折叠显示。</p>
-<p><b>快速切换应用：</b>双击应用切换按钮即可在最近两个应用之间切换。</p>
-<p><b>Daydream：</b>系统各层高度优化的全新 VR 平台，包括手机、头戴设备和控制器，今年晚些时候揭晓。</p>
-<p><b>Vulkan API：</b>新的 3D 高性能、跨平台图形 API 。</p>
-<p><b>新的 JIT/AOT 编译器 ：</b>改进性能、更快安装、更少存储占用。</p>
-<p><b>Direct Reply：</b>通知栏直接回复，而不用打开应用。</p>
-<p><b>更多安全特性：</b>文件级别的加密、在开机解锁前即可运行的 Direct Boot 功能、借鉴 ChromeOS 的系统平滑升级。</p>
-<p>更多 Android 7.0 特性：<a href="https://www.android.com/versions/nougat-7-0/" target="_blank" rel="external">https://www.android.com/versions/nougat-7-0/</a><br>开发者资源：<a href="https://developer.android.com/about/versions/nougat/" target="_blank" rel="external">https://developer.android.com/about/versions/nougat/</a></p>
-<p>本文转载自：<a href="http://mp.weixin.qq.com/s?__biz=MzA5MDg3MjczMg==&mid=2652003553&idx=1&sn=2ec1d9941b74172524fdb9f6d1e8d158&scene=25&srcid=0823PcnO93w6hDp2CCExS0Hn#wechat_redirect" target="_blank" rel="external">北京GDG</a></p>
+<p>其实这很简单，这是因为你没有配置adb的环境变量。不信？大家想想win上配置安卓的环境时是否添加了两个path，一个是sdk的tools文件夹，另一个是platform-tools文件夹。想起来就对了，mac下也需要配置</p>
+<p><b>1.首先打开你的终端</b></p>
+<p></p><p style="text-align:center"><br><img src="/img/ADB/adb2.jpeg"><br></p><br><b>2.然后输入以下代码：</b><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#进去HOME目录：</div><div class="line">echo $HOME</div><div class="line"></div><div class="line">#创建文件：</div><div class="line">touch .bash_profile</div><div class="line"></div><div class="line">#打开文件：</div><div class="line">open -e .bash_profile</div></pre></td></tr></table></figure><p></p>
+<p><b>3.这时就会打开你的.bash_profile文件，在文件中输入你的sdk路径：</b><br>export PATH=${PATH}:/Users/hjhrq1991/Downloads/adt-bundle-mac-x86_64-20140702/sdk/platform-tools:/Users/hjhrq1991/Downloads/adt-bundle-mac-x86_64-20140702/sdk/tools</p>
+<p></p><p style="text-align:center"><br><img src="/img/ADB/adb3.jpeg"><br></p><br><b>4.输入完后保存并关闭你的文件(关闭即自动保存)</b><p></p>
+<p><b>5.然后接着在你的终端上输入以下命令：</b><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#刷新环境变量</div><div class="line">source .bash_profile</div></pre></td></tr></table></figure></p>
+<p></p><p style="text-align:center"><br><img src="/img/ADB/adb4.jpeg"><br></p><br>然后你就可以使用adb命令来测试了，如果还不行，请检测你保存的sdk路径是否正确！<p></p>
 
           </section>
         </article>
@@ -148,10 +136,15 @@
        
         <div class="pager">
           
+            <a class="post-prev pager-item" href="/2016/03/29/65K/" >
+              <strong class="article-nav-caption">上一篇</strong>
+              <p class="post-nav-title">Android 65K问题之Multidex原理分析及NoClassDefFoundError的解决方法</p>
+            </a>
           
-            <a class="post-next pager-item" href="/2016/08/22/JsBridge/">
+          
+            <a class="post-next pager-item" href="/2014/10/25/recyclerview/">
               <strong class="article-nav-caption">下一篇</strong>
-              <p class="post-nav-title">Android-使用JsBridge来优化js与本地的交互</p>
+              <p class="post-nav-title">Android5.0之RecyclerView</p>
             </a>
           
         </div>
@@ -163,7 +156,7 @@
     
 
     <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="_posts/Nougat.md" data-title="Android 7.0 Nougat 的最终版发布" data-url="http://yoursite.com/2016/08/23/Nougat/"></div>
+      <div class="ds-thread" data-thread-key="_posts/ADB.md" data-title="Android-mac下如何使用adb命令" data-url="http://yoursite.com/2014/12/25/ADB/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
       <script type="text/javascript">
