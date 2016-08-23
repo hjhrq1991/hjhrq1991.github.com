@@ -203,25 +203,25 @@
     <link href="http://yoursite.com/2015/01/22/process/"/>
     <id>http://yoursite.com/2015/01/22/process/</id>
     <published>2015-01-22T15:34:46.000Z</published>
-    <updated>2016-08-23T12:37:58.000Z</updated>
+    <updated>2016-08-23T12:41:26.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前做项目的时候用到了微信分享和微信支付。起初微信支付没有集成到项目里，没发现什么，打包都正常。后来集成到项目里，发现坑爹了。微信只支持一个功能集成，即只能做微信支付，或者微信分享，不能同时集成两个。因为微信在sdk的处理上出现问题，每个功能有单独的sdk，而且都是实体都是继承同一个超类实现不同方法，因此sdk没法共存。<br>终于，在11月末的时候微信推出了新的集成sdk，把各个功能集成到一起了。之后项目继续在做，所以又没出现什么问题。直到最近，在打包测试时，问题终于来了。混淆打包一直不成功，提示</p>
-<p style="text-align:center"><br><img src="/img/Process/process1.png" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img src="/img/Process/process1.jpeg" width="60%" height="60%"><br></p>
 
 <p>这个问题我在这里就不深究是什么原因，有兴趣的朋友可以加我qq：444563258一起探讨。我们继续讨论如何解决吧。<br>在网上搜索，发现有大神提供了解决思路，于是乎我也尝试自己制作。<br>大神提供的解决思路是更改proguard源码中的ClassConstants.java中ATTR_StackMap属性改为dummy，然后进行重新导出成jar，并把混淆插件所使用的jar替换成导出来的。<br>到proguard官网上下载源码，修改源码中src-&gt;proguard-&gt;classfile中得ClassConstants.java文件</p>
-<p style="text-align:center"><br><img src="/img/Process/process2.png" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img src="/img/Process/process2.jpeg" width="60%" height="60%"><br></p>
 
 <p>把文件中第151行中得ATTR_StackMap属性StackMap修改为dummp。保存，然后就可以开始重新编译为jar做准备了</p>
-<p style="text-align:center"><br><img src="/img/Process/process3.png" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img src="/img/Process/process3.jpeg" width="60%" height="60%"><br></p>
 
 <p>重新编译可以使用多种方式，我这里使用ant进行重新编译，具体我就不多说，可以参考这篇blog，里面有ant的配置和使用<a href="http://glblong.blog.51cto.com/3058613/1536516。" target="_blank" rel="external">http://glblong.blog.51cto.com/3058613/1536516。</a><br>重新编译完后，我们就可以使用了。如果你使用的是eclipse，代码混淆使用的是sdk里的jar。大家可以替换sdk下的tools的groguard.jar(大伙别介意，我用的是mac，所以就没有列表具体路径，只是做个截图供大家参考)</p>
-<p style="text-align:center"><br><img src="/img/Process/process4.png" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img src="/img/Process/process4.jpeg" width="60%" height="60%"><br></p>
 
 <p>如果你使用的是android studio，studio的话，默认会使用它自带的proguard插件，所以替换sdk的jar是无效的，依然会提示这个错误，所以你有两种选择：1.更改你的studio里proguard插件的路径(这个我也不知道哪里改，如果你知道的话请告诉我一声)；2.替换你的studio里的proguard.jar(路径如下图)</p>
-<p style="text-align:center"><br><img src="/img/Process/process5.png" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img src="/img/Process/process5.jpeg" width="60%" height="60%"><br></p>
 
 <p>替换之后重启你的studio，然后重新打包你的项目，你就会很惊喜的看到，终于编译成功了！</p>
-<p style="text-align:center"><br><img src="/img/Process/process6.png" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img src="/img/Process/process6.jpeg" width="60%" height="60%"><br></p>
 
 <p>文后附上我重新编译的proguard下载地址：<a href="http://download.csdn.net/detail/hjhrq1991/8388025" target="_blank" rel="external">点击下载</a></p>
 ]]></content>
