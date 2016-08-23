@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-23T02:14:27.000Z</updated>
+  <updated>2016-08-23T02:21:56.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Nouga</title>
+    <title>Android 7.0 Nougat 的最终版发布</title>
     <link href="http://yoursite.com/2016/08/23/Nouga/"/>
     <id>http://yoursite.com/2016/08/23/Nouga/</id>
     <published>2016-08-23T02:06:32.000Z</published>
-    <updated>2016-08-23T02:14:27.000Z</updated>
+    <updated>2016-08-23T02:21:56.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天 Google 宣布推出 Android 7.0 Nougat 的最终版，Nexus 设备将第一时间获得更新。同时 7.0 源码也已提交给 Android Open Source Project (AOSP) ，这意味着整个 Android 生态系统获得了最新 Android 系统。</p>
 <p>设备升级<br>接下来几周 Nexus 6, Nexus 5X, Nexus 6P, Nexus 9, Nexus Player, Pixel C, and General Mobile 4G (Android One) 将获得 Android 7.0 的 OTA 升级。在此之前已加入 Android Beta 计划正在使用 7.0 开发者预览版的设备也将获得最终版升级。</p>
