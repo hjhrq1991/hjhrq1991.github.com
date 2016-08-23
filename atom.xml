@@ -203,7 +203,7 @@
     <link href="http://yoursite.com/2015/01/22/process/"/>
     <id>http://yoursite.com/2015/01/22/process/</id>
     <published>2015-01-22T15:34:46.000Z</published>
-    <updated>2016-08-23T12:41:26.000Z</updated>
+    <updated>2016-08-23T12:42:38.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前做项目的时候用到了微信分享和微信支付。起初微信支付没有集成到项目里，没发现什么，打包都正常。后来集成到项目里，发现坑爹了。微信只支持一个功能集成，即只能做微信支付，或者微信分享，不能同时集成两个。因为微信在sdk的处理上出现问题，每个功能有单独的sdk，而且都是实体都是继承同一个超类实现不同方法，因此sdk没法共存。<br>终于，在11月末的时候微信推出了新的集成sdk，把各个功能集成到一起了。之后项目继续在做，所以又没出现什么问题。直到最近，在打包测试时，问题终于来了。混淆打包一直不成功，提示</p>
 <p style="text-align:center"><br><img src="/img/Process/process1.jpeg" width="60%" height="60%"><br></p>
