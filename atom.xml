@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-24T15:50:05.000Z</updated>
+  <updated>2016-08-24T15:53:25.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/08/24/Blog_Hexo_Ananlytics/"/>
     <id>http://yoursite.com/2016/08/24/Blog_Hexo_Ananlytics/</id>
     <published>2016-08-24T11:13:21.000Z</published>
-    <updated>2016-08-24T15:50:05.000Z</updated>
+    <updated>2016-08-24T15:53:25.000Z</updated>
     
     <content type="html"><![CDATA[<p>关于Hexo的文章阅读量设置问题，大多数人都是使用不蒜子的代码实现。但是这个方法仅局限于在文章页面显示阅读数，首页是不显示的。</p>
 <p>下面介绍如何在首页及文章页面都显示文章的阅读量，显示效果如下：</p>
@@ -50,7 +50,7 @@
 <p>在上述路径下添加<font color="red">leancloud.后缀</font>文件，并添加代码，添加的代码请按照主题常用格式编写。<br>NexT：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;% if theme.leancloud_visitors.enable %&#125;</div><div class="line">	&amp;nbsp; | &amp;nbsp;</div><div class="line">	&lt;span id=&quot;&#123;&#123; url_for(post.path) &#125;&#125;&quot;class=&quot;leancloud_visitors&quot; data-flag-title=&quot;&#123;&#123; post.title &#125;&#125;&quot;&gt;</div><div class="line">		&amp;nbsp;&#123;&#123;__(&apos;post.visitors&apos;)&#125;&#125;</div><div class="line">	&lt;/span&gt;</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure></p>
 <p>gStyle：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;% if (theme.leancloud_visitors.enable)&#123; %&gt;</div><div class="line">	&lt;span id=&quot;&#123;&#123; url_for(post.path) &#125;&#125;&quot;class=&quot;leancloud_visitors&quot; data-flag-title=&quot;&#123;&#123; post.title &#125;&#125;&quot;&gt;</div><div class="line">		&lt;%- &#123;&#123;__(&apos;post.visitors&apos;)&#125;&#125; %&gt;</div><div class="line">	&lt;/span&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure></p>
 <p><b>修改post.后缀 文件</b></p>
-<p>NexT在<font color="red">\layout_macro</font>，我的在<font color="red">\layout</font>路径下，编辑<font color="red">post.后缀</font>文件，找到相应的插入位置插入代码：<br>gStyle：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p style=&quot;text-align:center&quot;&gt;</div><div class="line">&lt;img border=&quot;1&quot;src=&quot;/img/Blog_hexo/hexo_anallytics6.png&quot; width=&quot;60%&quot; height=&quot;60%&quot;&gt;&lt;/img&gt;</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<p>NexT在<font color="red">\layout_macro</font>，我的在<font color="red">\layout</font>路径下，编辑<font color="red">post.后缀</font>文件，找到相应的插入位置插入代码：<br>gStyle：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p style=&quot;text-align:center&quot;&gt;</div><div class="line">&lt;img border=&quot;1&quot; src=&quot;/img/Blog_hexo/hexo_anallytics6.png&quot; width=&quot;60%&quot; height=&quot;60%&quot;&gt;&lt;/img&gt;</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure></p>
 <p>NexT：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% include &apos;_scripts/leancloud.后缀&apos; %&#125;</div></pre></td></tr></table></figure></p>
 <p><b>修改layout.后缀 文件</b></p>
 <p>在主题目录下的layout目录下，编辑<font color="red">_layout.后缀</font>文件，在body标签的上方插入代码：</p>
@@ -102,18 +102,18 @@
     <link href="http://yoursite.com/2016/08/23/Nougat/"/>
     <id>http://yoursite.com/2016/08/23/Nougat/</id>
     <published>2016-08-23T02:06:32.000Z</published>
-    <updated>2016-08-23T12:15:49.000Z</updated>
+    <updated>2016-08-24T15:52:14.000Z</updated>
     
-    <content type="html"><![CDATA[<p style="text-align:center"><br><img src="/img/Nougat/Nougat.png" width="60%" height="60%"><br></p><br>今天 Google 宣布推出 Android 7.0 Nougat 的最终版，Nexus 设备将第一时间获得更新。同时 7.0 源码也已提交给 Android Open Source Project (AOSP) ，这意味着整个 Android 生态系统获得了最新 Android 系统。<br><br>### 设备升级<br>接下来几周 Nexus 6, Nexus 5X, Nexus 6P, Nexus 9, Nexus Player, Pixel C, and General Mobile 4G (Android One) 将获得 Android 7.0 的 OTA 升级。在此之前已加入 Android Beta 计划正在使用 7.0 开发者预览版的设备也将获得最终版升级。<br><p style="text-align:center"><br><img src="/img/Nougat/Nougat2.png" width="60%" height="60%"><br></p>
+    <content type="html"><![CDATA[<p style="text-align:center"><br><img border="1" src="/img/Nougat/Nougat.png" width="60%" height="60%"><br></p><br>今天 Google 宣布推出 Android 7.0 Nougat 的最终版，Nexus 设备将第一时间获得更新。同时 7.0 源码也已提交给 Android Open Source Project (AOSP) ，这意味着整个 Android 生态系统获得了最新 Android 系统。<br><br>### 设备升级<br>接下来几周 Nexus 6, Nexus 5X, Nexus 6P, Nexus 9, Nexus Player, Pixel C, and General Mobile 4G (Android One) 将获得 Android 7.0 的 OTA 升级。在此之前已加入 Android Beta 计划正在使用 7.0 开发者预览版的设备也将获得最终版升级。<br><p style="text-align:center"><br><img border="1" src="/img/Nougat/Nougat2.png" width="60%" height="60%"><br></p>
 
 <p>除了以上 Nexus 设备，LG V20 将成为第一款搭载 Android 7.0 Nougat 系统的新手机。随着新系统的正式发布，很快更多搭载新系统的手机也将陆续推出。</p>
 <h3 id="Android-7-0-新功能回顾"><a href="#Android-7-0-新功能回顾" class="headerlink" title="Android 7.0 新功能回顾"></a>Android 7.0 新功能回顾</h3><p>Android 7.0 包含 250 多项主要特性，下面简要介绍一些功能亮点。</p>
-<p style="text-align:center"><br><img src="/img/Nougat/Nougat3.png" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img border="1" src="/img/Nougat/Nougat3.png" width="60%" height="60%"><br></p>
 
 <p><b>更多 emoji 表情：</b>系统内置 1500+ emoji 符号，包括新加入的 72 个。</p>
 <p><b>自定义快速设置：</b>新系统允许你修改系统通知栏的快速设置功能，包括是添加删除以及位置的调整。</p>
 <p><b>多区域支持：</b>设置多种适合自己的语言区域，系统和应用可以更好地体现这点。</p>
-<p></p><p style="text-align:center"><br><img src="/img/Nougat/Nougat4.png" width="60%" height="60%"><br></p><p></p>
+<p></p><p style="text-align:center"><br><img border="1" src="/img/Nougat/Nougat4.png" width="60%" height="60%"><br></p><p></p>
 <p><b>多窗口支持：</b>上下或左右同时看到两个应用。</p>
 <p><b>电池优化：</b>Doze 模式更进一步，更省电。</p>
 <p><b>Data Saver：</b>开启 Data Saver 后，后台应用将无法使用移动网络。</p>
@@ -130,7 +130,7 @@
     
     <summary type="html">
     
-      &lt;p style=&quot;text-align:center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/img/Nougat/Nougat.png&quot; width=&quot;60%&quot; height=&quot;60%&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;br&gt;今天 Google 宣布推出 Android 7.0 Nougat 的最
+      &lt;p style=&quot;text-align:center&quot;&gt;&lt;br&gt;&lt;img border=&quot;1&quot; src=&quot;/img/Nougat/Nougat.png&quot; width=&quot;60%&quot; height=&quot;60%&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;br&gt;今天 Google 宣布推出 Android 7.
     
     </summary>
     
@@ -285,25 +285,25 @@
     <link href="http://yoursite.com/2015/01/22/process/"/>
     <id>http://yoursite.com/2015/01/22/process/</id>
     <published>2015-01-22T15:34:46.000Z</published>
-    <updated>2016-08-23T12:42:38.000Z</updated>
+    <updated>2016-08-24T15:53:02.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前做项目的时候用到了微信分享和微信支付。起初微信支付没有集成到项目里，没发现什么，打包都正常。后来集成到项目里，发现坑爹了。微信只支持一个功能集成，即只能做微信支付，或者微信分享，不能同时集成两个。因为微信在sdk的处理上出现问题，每个功能有单独的sdk，而且都是实体都是继承同一个超类实现不同方法，因此sdk没法共存。<br>终于，在11月末的时候微信推出了新的集成sdk，把各个功能集成到一起了。之后项目继续在做，所以又没出现什么问题。直到最近，在打包测试时，问题终于来了。混淆打包一直不成功，提示</p>
-<p style="text-align:center"><br><img src="/img/Process/process1.jpeg" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img border="1" src="/img/Process/process1.jpeg" width="60%" height="60%"><br></p>
 
 <p>这个问题我在这里就不深究是什么原因，有兴趣的朋友可以加我qq：444563258一起探讨。我们继续讨论如何解决吧。<br>在网上搜索，发现有大神提供了解决思路，于是乎我也尝试自己制作。<br>大神提供的解决思路是更改proguard源码中的ClassConstants.java中ATTR_StackMap属性改为dummy，然后进行重新导出成jar，并把混淆插件所使用的jar替换成导出来的。<br>到proguard官网上下载源码，修改源码中src-&gt;proguard-&gt;classfile中得ClassConstants.java文件</p>
-<p style="text-align:center"><br><img src="/img/Process/process2.jpeg" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img border="1" src="/img/Process/process2.jpeg" width="60%" height="60%"><br></p>
 
 <p>把文件中第151行中得ATTR_StackMap属性StackMap修改为dummp。保存，然后就可以开始重新编译为jar做准备了</p>
-<p style="text-align:center"><br><img src="/img/Process/process3.jpeg" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img border="1" src="/img/Process/process3.jpeg" width="60%" height="60%"><br></p>
 
 <p>重新编译可以使用多种方式，我这里使用ant进行重新编译，具体我就不多说，可以参考这篇blog，里面有ant的配置和使用<a href="http://glblong.blog.51cto.com/3058613/1536516。" target="_blank" rel="external">http://glblong.blog.51cto.com/3058613/1536516。</a><br>重新编译完后，我们就可以使用了。如果你使用的是eclipse，代码混淆使用的是sdk里的jar。大家可以替换sdk下的tools的groguard.jar(大伙别介意，我用的是mac，所以就没有列表具体路径，只是做个截图供大家参考)</p>
-<p style="text-align:center"><br><img src="/img/Process/process4.jpeg" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img border="1" src="/img/Process/process4.jpeg" width="60%" height="60%"><br></p>
 
 <p>如果你使用的是android studio，studio的话，默认会使用它自带的proguard插件，所以替换sdk的jar是无效的，依然会提示这个错误，所以你有两种选择：1.更改你的studio里proguard插件的路径(这个我也不知道哪里改，如果你知道的话请告诉我一声)；2.替换你的studio里的proguard.jar(路径如下图)</p>
-<p style="text-align:center"><br><img src="/img/Process/process5.jpeg" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img border="1" src="/img/Process/process5.jpeg" width="60%" height="60%"><br></p>
 
 <p>替换之后重启你的studio，然后重新打包你的项目，你就会很惊喜的看到，终于编译成功了！</p>
-<p style="text-align:center"><br><img src="/img/Process/process6.jpeg" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img border="1" src="/img/Process/process6.jpeg" width="60%" height="60%"><br></p>
 
 <p>文后附上我重新编译的proguard下载地址：<a href="http://download.csdn.net/detail/hjhrq1991/8388025" target="_blank" rel="external">点击下载</a></p>
 ]]></content>
@@ -330,18 +330,18 @@
     <link href="http://yoursite.com/2014/12/25/ADB/"/>
     <id>http://yoursite.com/2014/12/25/ADB/</id>
     <published>2014-12-25T14:34:15.000Z</published>
-    <updated>2016-08-23T12:16:28.000Z</updated>
+    <updated>2016-08-24T15:52:40.000Z</updated>
     
     <content type="html"><![CDATA[<p>相信在使用mac os X的网友都知道，mac没几个像win上豌豆荚、360助手之类的工具，在mac下做android开发就比较麻烦了，遇到adb中断，或者打包apk，没有工具很难重启adb或者把apk安装到手机上。这时候我们就需要使用adb命令了。<br>可是有些有网友又说，adb用不了，提示：commadb not found</p>
-<p style="text-align:center"><br><img src="/img/ADB/ADB1.png" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img border="1" src="/img/ADB/ADB1.png" width="60%" height="60%"><br></p>
 
 <p>其实这很简单，这是因为你没有配置adb的环境变量。不信？大家想想win上配置安卓的环境时是否添加了两个path，一个是sdk的tools文件夹，另一个是platform-tools文件夹。想起来就对了，mac下也需要配置</p>
 <p><b>1.首先打开你的终端</b></p>
-<p></p><p style="text-align:center"><br><img src="/img/ADB/ADB2.png" width="60%" height="60%"><br></p><br><b>2.然后输入以下代码：</b><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#进去HOME目录：</div><div class="line">echo $HOME</div><div class="line"></div><div class="line">#创建文件：</div><div class="line">touch .bash_profile</div><div class="line"></div><div class="line">#打开文件：</div><div class="line">open -e .bash_profile</div></pre></td></tr></table></figure><p></p>
+<p></p><p style="text-align:center"><br><img border="1" src="/img/ADB/ADB2.png" width="60%" height="60%"><br></p><br><b>2.然后输入以下代码：</b><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#进去HOME目录：</div><div class="line">echo $HOME</div><div class="line"></div><div class="line">#创建文件：</div><div class="line">touch .bash_profile</div><div class="line"></div><div class="line">#打开文件：</div><div class="line">open -e .bash_profile</div></pre></td></tr></table></figure><p></p>
 <p><b>3.这时就会打开你的.bash_profile文件，在文件中输入你的sdk路径：</b><br>export PATH=${PATH}:/Users/hjhrq1991/Downloads/adt-bundle-mac-x86_64-20140702/sdk/platform-tools:/Users/hjhrq1991/Downloads/adt-bundle-mac-x86_64-20140702/sdk/tools</p>
-<p></p><p style="text-align:center"><br><img src="/img/ADB/ADB3.jpeg" width="60%" height="60%"><br></p><br><b>4.输入完后保存并关闭你的文件(关闭即自动保存)</b><p></p>
+<p></p><p style="text-align:center"><br><img border="1" src="/img/ADB/ADB3.jpeg" width="60%" height="60%"><br></p><br><b>4.输入完后保存并关闭你的文件(关闭即自动保存)</b><p></p>
 <p><b>5.然后接着在你的终端上输入以下命令：</b><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#刷新环境变量</div><div class="line">source .bash_profile</div></pre></td></tr></table></figure></p>
-<p></p><p style="text-align:center"><br><img src="/img/ADB/ADB4.jpeg" width="60%" height="60%"><br></p><br>然后你就可以使用adb命令来测试了，如果还不行，请检测你保存的sdk路径是否正确！<p></p>
+<p></p><p style="text-align:center"><br><img border="1" src="/img/ADB/ADB4.jpeg" width="60%" height="60%"><br></p><br>然后你就可以使用adb命令来测试了，如果还不行，请检测你保存的sdk路径是否正确！<p></p>
 ]]></content>
     
     <summary type="html">
@@ -362,11 +362,11 @@
     <link href="http://yoursite.com/2014/10/25/recyclerview/"/>
     <id>http://yoursite.com/2014/10/25/recyclerview/</id>
     <published>2014-10-25T03:06:35.000Z</published>
-    <updated>2016-08-23T12:16:05.000Z</updated>
+    <updated>2016-08-24T15:52:51.000Z</updated>
     
     <content type="html"><![CDATA[<p>在上一篇Blog中已经讲到过了RecyclerVIew的特性等等，现在我们开始正式讲讲这个它吧。<br>RecyclerView作为listview的更新版面世，有着他得天独厚的优势：<br>第一点，就是他更完善Recycler机制，比listview的recycler机制还相对完善，可以指定recycler缓冲池中循环利用的view的数量；<br>第二点，recyclerview不再有由自己来管理子布局view了，全部交给layoutmanger管理；<br>第三点，完美解决了循环和滚动的问题，而且支持横向布局；<br>第四点，支持item动画，猿们终于不用自己写很多代码去对item设置动画，懒点可以使用默认动画，想炫点可以自己自定义动画并通过setItemAnimator()方法设置……<br>好了，不多说，优势还有很多，就让猿们自己慢慢挖掘吧。</p>
 <p>recyclerview是21新增的widget，想使用的话，需要使用以下最新的support-v7-21包，以及recyclerview的单独支持包。这两个包都可以在最新的SDK中提取出来，使用jar包或者工程都可以。</p>
-<p style="text-align:center"><br><img src="/img/RecyclerView/RecyclerView1.png" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img border="1" src="/img/RecyclerView/RecyclerView1.png" width="60%" height="60%"><br></p>
 
 <p>导入包后我们就可以开始使用recyclerview了，在布局文件中使用方法如下。Eclipse中是无法找到的，只能自己手动把android.support.v7.widget.RecyclerView打出来，在AS上可以直接找到。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;android.support.v7.widget.RecyclerView</div><div class="line">    android:id=&quot;@+id/rvlist&quot;</div><div class="line">    android:layout_below=&quot;@+id/title_bar&quot;</div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;match_parent&quot;</div><div class="line">    android:scrollbars=&quot;none&quot; /&gt;</div></pre></td></tr></table></figure></p>
 <p>布局有了，item的布局我就不说，下面跟随我的步伐看看代码里怎么使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">private void showDate() &#123;</div><div class="line">    // 创建一个线性布局管理器</div><div class="line">    LinearLayoutManager layoutManager = new LinearLayoutManager(this);</div><div class="line">    // 设置垂直布局，目前仅支持LinearLayout(有垂直和横向)</div><div class="line">    layoutManager.setOrientation(LinearLayoutManager.VERTICAL);</div><div class="line">    // 设置缓冲池最大循环使用view数</div><div class="line">    mRecylerView.getRecycledViewPool().setMaxRecycledViews(0, 10);</div><div class="line">    // 设置布局管理器</div><div class="line">    mRecylerView.setLayoutManager(layoutManager);</div><div class="line">    // 创建Adapter，并指定数据集</div><div class="line">    mAdapter = new TestAdaper(this, mList);</div><div class="line">    // 设置Adapter</div><div class="line">    mRecylerView.setAdapter(mAdapter);</div><div class="line">    // 设置默认动画</div><div class="line">    mRecylerView.setItemAnimator(new DefaultItemAnimator());</div><div class="line">    // 还有下面这上三种动画FlipDownItemAnimator, SlideItemAnimator, FromTopItemAnimator</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -374,7 +374,7 @@
 <p>看了这么多代码，估计猿们纷纷表示，click方法呢？怎么没见到onitemclick方法？是的，listview里有onItemClick方法，但是这样容易造成item和item内部控件的点击事件冲突，为了解决这个问题，recyclerview不再提供onitemclick方法。惊恐纳尼，不提供，那怎么破？别担心，onitemclick方法可以在adapter中实现。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * item点击事件的实现</div><div class="line"> */</div><div class="line">class OnItemClick implements View.OnClickListener &#123;</div><div class="line"></div><div class="line">    public OnItemClick() &#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onClick(View v) &#123;</div><div class="line">        Toast.makeText(context, &quot;你点击了item&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/**</div><div class="line"> * item内部控件点击事件的实现</div><div class="line"> */</div><div class="line">class OnClick implements View.OnClickListener &#123;</div><div class="line">    private int position;</div><div class="line"></div><div class="line">    public OnClick(int position) &#123;</div><div class="line">        this.position = position;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onClick(View v) &#123;</div><div class="line">        Toast.makeText(context, &quot;你点击了第&quot; + position + &quot;个text&quot;,</div><div class="line">            Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>onItemClick方法在ViewHolder里使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class TextHoler extends RecyclerView.ViewHolder &#123;</div><div class="line">    public TextView textView;</div><div class="line"></div><div class="line">    public TextHoler(View view) &#123;</div><div class="line">        super(view);</div><div class="line">        this.textView = (TextView) view.findViewById(R.id.text);</div><div class="line">        view.setOnClickListener(new OnItemClick());// 这里使用onItemClick方法</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>至于item内部控件的点击事件在onBindViewHolder方法里实现。<br>除了这种方法可以实现onItemClick事件外，还有其他方法，例如在复写recyclerview源码，扩展他的点击事件方法。我自己还有另一种方法，在adapter里写一个接口，在activity里实现接口并监听接口，这种方法就在我下一篇blog使用recyclerview实现Gallery画廊效果里说吧。</p>
-<p style="text-align:center"><br><img src="/img/RecyclerView/RecyclerView2.jpeg" width="60%" height="60%"><br></p>
+<p style="text-align:center"><br><img border="1" src="/img/RecyclerView/RecyclerView2.jpeg" width="60%" height="60%"><br></p>
 
 <p><a href="http://download.csdn.net/detail/hjhrq1991/8093009" target="_blank" rel="external">demo下载</a></p>
 ]]></content>
