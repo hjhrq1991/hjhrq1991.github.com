@@ -71,25 +71,25 @@
                      
                         <li>
                             <a class="wave " href="/">
-                                首页
+                                home
                             </a>
                         </li>
                      
                         <li>
                             <a class="wave " href="/archives">
-                                归档
+                                archives
                             </a>
                         </li>
                      
                         <li>
                             <a class="wave " href="/about">
-                                关于
+                                about
                             </a>
                         </li>
                      
                         <li>
                             <a class="wave no-smoothstate" href="/atom.xml">
-                                订阅
+                                rss
                             </a>
                         </li>
                      
@@ -108,6 +108,14 @@
           
           <header class="post-header">
           
+
+          {% if theme.leancloud_visitors.enable %}
+          &nbsp; | &nbsp;
+          <span id="{{ url_for(post.path) }}"class="leancloud_visitors" data-flag-title="{{ post.title }}">
+                    &nbsp;{{__('post.visitors')}}
+          </span>
+          {% endif %}
+
           </header>
           <h1 class="post-title">Android-解决微信等混淆打包提示Can&#39;t process class</h1>
 
@@ -253,13 +261,13 @@
         <div class="pager">
           
             <a class="post-prev pager-item" href="/2016/03/29/65K/" >
-              <strong class="article-nav-caption">上一篇</strong>
+              <strong class="article-nav-caption">Nieuwer</strong>
               <p class="post-nav-title">Android 65K问题之Multidex原理分析及NoClassDefFoundError的解决方法</p>
             </a>
           
           
             <a class="post-next pager-item" href="/2014/12/25/ADB/">
-              <strong class="article-nav-caption">下一篇</strong>
+              <strong class="article-nav-caption">Ouder</strong>
               <p class="post-nav-title">Android-mac下如何使用adb命令</p>
             </a>
           
@@ -301,10 +309,23 @@
             </div>
         </div>
         <footer class="footer">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
     <p>由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动，搭载<a href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a>主题</p>
     <p>
         &copy; 2016 John Doe
     </p>
+
+    <p>
+        <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+            ||
+        <span id="busuanzi_container_site_uv">
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span>
+    </p>
+
 </footer>
 <script src="/lib/jquery.js"></script>
 <script src="/lib/waves.js"></script>
@@ -312,5 +333,9 @@
 <script src="/lib/jquery.tocify.js"></script>
 <script src="/js/main.js"></script>
 
+
+        {% if theme.leancloud_visitors.enable %}
+        {% include 'partials/lean-analytics' %}
+        {% endif %}
     </body>
 </html>
