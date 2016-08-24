@@ -109,12 +109,13 @@
           <header class="post-header">
           
 
+          <!-- leancloud -->
           {% if theme.leancloud_visitors.enable %}
           &nbsp; | &nbsp;
           <span id="{{ url_for(post.path) }}"class="leancloud_visitors" data-flag-title="{{ post.title }}">
                     &nbsp;{{__('post.visitors')}}
           </span>
-          {% endif %}
+{% endif %}
 
           </header>
           <h1 class="post-title">Android5.0之RecyclerView</h1>
@@ -255,7 +256,7 @@
         <div class="pager">
           
             <a class="post-prev pager-item" href="/2014/12/25/ADB/" >
-              <strong class="article-nav-caption">Nieuwer</strong>
+              <strong class="article-nav-caption">Newer</strong>
               <p class="post-nav-title">Android-mac下如何使用adb命令</p>
             </a>
           
