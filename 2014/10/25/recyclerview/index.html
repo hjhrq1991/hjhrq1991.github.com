@@ -9,6 +9,9 @@
             <meta name="theme-color" content="#4184f3">
             
             <link href="/atom.xml" rel="alternate" title="猪生-秋仔" type="application/atom+xml"/>
+
+link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/donate.css')
+
             
             
             <link href="/favicon.ico" rel="icon"/>
@@ -101,23 +104,10 @@
                     <div class="row">
     <div class="main">
         <article>
-          
-          <header class="post-header">
-          
-          </header>
-          <h1 class="post-title">Android5.0之RecyclerView</h1>
-
-          <section class="post-info">
-            <span class="post-date">2014/10/25</span>
-            
-            
-            <span class="post-tags">
-              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Android/">Android</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/RecyclerView/">RecyclerView</a></li></ul>
-            </span>
-            
-          </section>
-
-          <section class="post-content">
+            <h1>
+                Android5.0之RecyclerView 
+            </h1>
+            <small>2014/10/25</small>
             <p>在上一篇Blog中已经讲到过了RecyclerVIew的特性等等，现在我们开始正式讲讲这个它吧。<br>RecyclerView作为listview的更新版面世，有着他得天独厚的优势：<br>第一点，就是他更完善Recycler机制，比listview的recycler机制还相对完善，可以指定recycler缓冲池中循环利用的view的数量；<br>第二点，recyclerview不再有由自己来管理子布局view了，全部交给layoutmanger管理；<br>第三点，完美解决了循环和滚动的问题，而且支持横向布局；<br>第四点，支持item动画，猿们终于不用自己写很多代码去对item设置动画，懒点可以使用默认动画，想炫点可以自己自定义动画并通过setItemAnimator()方法设置……<br>好了，不多说，优势还有很多，就让猿们自己慢慢挖掘吧。</p>
 <p>recyclerview是21新增的widget，想使用的话，需要使用以下最新的support-v7-21包，以及recyclerview的单独支持包。这两个包都可以在最新的SDK中提取出来，使用jar包或者工程都可以。</p>
 <p style="text-align:center"><br><img src="/img/RecyclerView/RecyclerView1.png" width="60%" height="60%"><br></p>
@@ -132,23 +122,7 @@
 
 <p><a href="http://download.csdn.net/detail/hjhrq1991/8093009" target="_blank" rel="external">demo下载</a></p>
 
-          </section>
         </article>
-        
-
-       
-        <div class="pager">
-          
-            <a class="post-prev pager-item" href="/2014/12/25/ADB/" >
-              <strong class="article-nav-caption">上一篇</strong>
-              <p class="post-nav-title">Android-mac下如何使用adb命令</p>
-            </a>
-          
-          
-        </div>
-        
-
-         <!-- comments -->
         <div class="comment-section">
   
     
@@ -174,9 +148,7 @@
 
 
 </div>
-
     </div>
-    
 </div>
 
                 </div>
