@@ -111,6 +111,10 @@
 
           <!-- leancloud -->
           
+          <span id="{{ url_for(post.path) }}"class="leancloud_visitors" data-flag-title="{{ post.title }}">
+                 
+          </span>
+
 
           </header>
           <h1 class="post-title">Android 7.0 Nougat 的最终版发布</h1>
@@ -170,7 +174,7 @@
       width: 82px;
       height: 82px;
       background: url("/img/about/btn_reward.gif") no-repeat;
-      _background: url("/img/about//btn_reward.gif") no-repeat;
+      _background: url("/img/about/btn_reward.gif") no-repeat;
 
       <!-- 因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
          为了在让打赏按钮显示效果正常 而 添加了以下几行 css，嵌入其它博客时不一定要它们。 -->
@@ -262,6 +266,11 @@
        
         <div class="pager">
           
+            <a class="post-prev pager-item" href="/2016/08/24/Blog_Hexo_Ananlytics/" >
+              <strong class="article-nav-caption">上一篇</strong>
+              <p class="post-nav-title">Hexo构建博客篇-添加访问量统计功能</p>
+            </a>
+          
           
             <a class="post-next pager-item" href="/2016/08/22/JsBridge/">
               <strong class="article-nav-caption">下一篇</strong>
@@ -330,88 +339,87 @@
 <script src="/lib/jquery.tocify.js"></script>
 <script src="/js/main.js"></script>
 
-
         
         <!-- custom analytics part create by xiamo -->
 <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
 <script>AV.initialize("{{theme.leancloud_visitors.app_id}}", "{{theme.leancloud_visitors.app_key}}");</script>
 <script>
 function showTime(Counter) {
-	var query = new AV.Query(Counter);
-		$(".leancloud_visitors").each(function() {
-			var url = $(this).attr("id").trim();
-			query.equalTo("url", url);
-			query.find({
-				success: function(results) {
-					if (results.length == 0) {
-                        var content = '0 ' + $(document.getElementById(url)).text();
-						$(document.getElementById(url)).text(content);
-						return;
-					}
-					for (var i = 0; i < results.length; i++) {
-						var object = results[i];
-						var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
-						$(document.getElementById(url)).text(content);
-					}
-				},
-				error: function(object, error) {
-					console.log("Error: " + error.code + " " + error.message);
-				}
-		});
+var query = new AV.Query(Counter);
+$(".leancloud_visitors").each(function() {
+var url = $(this).attr("id").trim();
+query.equalTo("url", url);
+query.find({
+success: function(results) {
+if (results.length == 0) {
+var content = '0 ' + $(document.getElementById(url)).text();
+$(document.getElementById(url)).text(content);
+return;
+}
+for (var i = 0; i < results.length; i++) {
+var object = results[i];
+var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+$(document.getElementById(url)).text(content);
+}
+},
+error: function(object, error) {
+console.log("Error: " + error.code + " " + error.message);
+}
+});
 
-	});
+});
 }
 
 function addCount(Counter) {
-		var Counter = AV.Object.extend("Counter");
-		url = $(".leancloud_visitors").attr('id').trim();
-		title = $(".leancloud_visitors").attr('data-flag-title').trim();
-		var query = new AV.Query(Counter);
-		query.equalTo("url", url);
-		query.find({
-			success: function(results) {
-				if (results.length > 0) {
-					var counter = results[0];
-					counter.fetchWhenSave(true);
-					counter.increment("time");
-					counter.save(null, {
-						success: function(counter) {
-							var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
-							$(document.getElementById(url)).text(content);
-						},
-						error: function(counter, error) {
-							console.log('Failed to save Visitor num, with error message: ' + error.message);
-						}
-					});
-			} else {
-				var newcounter = new Counter();
-				newcounter.set("title", title);
-				newcounter.set("url", url);
-				newcounter.set("time", 1);
-				newcounter.save(null, {
-					success: function(newcounter) {
-						console.log("newcounter.get('time')="+newcounter.get('time'));
-							var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
-							$(document.getElementById(url)).text(content);
-						},
-						error: function(newcounter, error) {
-							console.log('Failed to create');
-						}
-					});
-				}
-			},
-			error: function(error) {
-				console.log('Error:' + error.code + " " + error.message);
-			}
-		});
+var Counter = AV.Object.extend("Counter");
+url = $(".leancloud_visitors").attr('id').trim();
+title = $(".leancloud_visitors").attr('data-flag-title').trim();
+var query = new AV.Query(Counter);
+query.equalTo("url", url);
+query.find({
+success: function(results) {
+if (results.length > 0) {
+var counter = results[0];
+counter.fetchWhenSave(true);
+counter.increment("time");
+counter.save(null, {
+success: function(counter) {
+var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+$(document.getElementById(url)).text(content);
+},
+error: function(counter, error) {
+console.log('Failed to save Visitor num, with error message: ' + error.message);
+}
+});
+} else {
+var newcounter = new Counter();
+newcounter.set("title", title);
+newcounter.set("url", url);
+newcounter.set("time", 1);
+newcounter.save(null, {
+success: function(newcounter) {
+console.log("newcounter.get('time')="+newcounter.get('time'));
+var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+$(document.getElementById(url)).text(content);
+},
+error: function(newcounter, error) {
+console.log('Failed to create');
+}
+});
+}
+},
+error: function(error) {
+console.log('Error:' + error.code + " " + error.message);
+}
+});
 }
 $(function() {
-		var Counter = AV.Object.extend("Counter");
-		if ($('.leancloud_visitors').length == 1) {
-			addCount(Counter);
-		} else if ($('.post-title-link').length > 1) {
-			showTime(Counter);
-		}
+var Counter = AV.Object.extend("Counter");
+if ($('.leancloud_visitors').length == 1) {
+addCount(Counter);
+} else if ($('.post-title-link').length > 1) {
+showTime(Counter);
+}
 });
 </script>
         
