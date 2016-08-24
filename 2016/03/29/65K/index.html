@@ -140,9 +140,10 @@
 <p>通过上面的分析，我们已经得知Multidex的原理了，所以要解决一启动程序就NoClassDefFoundError的问题只需要确定该类是否正确被编译到主classes.dex中去了，如果没有被编进去的话，只要修改下maindexlist.txt文件，把这个类添加进去即可。由于maindexlist.txt这个文件是每次编译时自动生成的，手动去修改它是没用的，所以我们可以在gradle编译中新加入一个task，在create{variant}MainDexClassList这个task完成之后再去修改maindexlist.txt文件添加丢失的class。</p>
 
           </section>
+        </article>
 
-              <!-- donate -->
-              
+        <!-- donate -->
+        
   <!-- css -->
   <style type="text/css">
       .center {
@@ -242,7 +243,7 @@
 </div>
 <!-- /Donate Module -->
    
-        </article>
+
         
 
        

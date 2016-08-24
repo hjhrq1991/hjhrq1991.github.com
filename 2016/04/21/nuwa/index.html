@@ -151,9 +151,10 @@
 <h3 id="三、有哪些坑？"><a href="#三、有哪些坑？" class="headerlink" title="三、有哪些坑？"></a>三、有哪些坑？</h3><p>1.Application类尽可能少引用其他类，以免造成该类被打伤标记无法进行热修复；<br>2.热修复无法修复xml(特别是manifest)、资源，所以如果你的布局或者manifest出错，尽量看看能否在代码里修改，不能的话那就放弃热修复还是使用常规升级修复；<br>3.使用命令生成patch.jar时，有修改的类会连同向下依赖的类一起打包进去，因此打出来包比你想象中大点，如果没有打进去，可能会造成ClassNotFoundException错误；</p>
 
           </section>
+        </article>
 
-              <!-- donate -->
-              
+        <!-- donate -->
+        
   <!-- css -->
   <style type="text/css">
       .center {
@@ -253,7 +254,7 @@
 </div>
 <!-- /Donate Module -->
    
-        </article>
+
         
 
        
