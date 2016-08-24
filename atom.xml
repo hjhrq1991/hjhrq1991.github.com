@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>猪生-秋仔</title>
   
-  <link href="/atom.xml" rel="self"/>
+  <link href="//atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
   <updated>2016-08-23T12:15:49.000Z</updated>
