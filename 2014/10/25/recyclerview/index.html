@@ -105,10 +105,23 @@
                     <div class="row">
     <div class="main">
         <article>
-            <h1>
-                Android5.0之RecyclerView 
-            </h1>
-            <small>2014/10/25</small>
+          
+          <header class="post-header">
+          
+          </header>
+          <h1 class="post-title">Android5.0之RecyclerView</h1>
+
+          <section class="post-info">
+            <span class="post-date">2014/10/25</span>
+            
+            
+            <span class="post-tags">
+              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Android/">Android</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/RecyclerView/">RecyclerView</a></li></ul>
+            </span>
+            
+          </section>
+
+          <section class="post-content">
             <p>在上一篇Blog中已经讲到过了RecyclerVIew的特性等等，现在我们开始正式讲讲这个它吧。<br>RecyclerView作为listview的更新版面世，有着他得天独厚的优势：<br>第一点，就是他更完善Recycler机制，比listview的recycler机制还相对完善，可以指定recycler缓冲池中循环利用的view的数量；<br>第二点，recyclerview不再有由自己来管理子布局view了，全部交给layoutmanger管理；<br>第三点，完美解决了循环和滚动的问题，而且支持横向布局；<br>第四点，支持item动画，猿们终于不用自己写很多代码去对item设置动画，懒点可以使用默认动画，想炫点可以自己自定义动画并通过setItemAnimator()方法设置……<br>好了，不多说，优势还有很多，就让猿们自己慢慢挖掘吧。</p>
 <p>recyclerview是21新增的widget，想使用的话，需要使用以下最新的support-v7-21包，以及recyclerview的单独支持包。这两个包都可以在最新的SDK中提取出来，使用jar包或者工程都可以。</p>
 <p style="text-align:center"><br><img src="/img/RecyclerView/RecyclerView1.png" width="60%" height="60%"><br></p>
@@ -123,7 +136,127 @@
 
 <p><a href="http://download.csdn.net/detail/hjhrq1991/8093009" target="_blank" rel="external">demo下载</a></p>
 
+          </section>
         </article>
+        
+
+       
+        <div class="pager">
+          
+            <a class="post-prev pager-item" href="/2014/12/25/ADB/" >
+              <strong class="article-nav-caption">上一篇</strong>
+              <p class="post-nav-title">Android-mac下如何使用adb命令</p>
+            </a>
+          
+          
+        </div>
+        
+
+         <!-- comments -->
+         
+  <!-- css -->
+  <style type="text/css">
+      .center {
+          text-align: center;
+      }
+      .hidden {
+          display: none;
+      }
+    .donate_bar a.btn_donate{
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+
+      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
+           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
+         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
+         嵌入其它博客时不一定要它们。 -->
+      -webkit-transition: background 0s;
+      -moz-transition: background 0s;
+      -o-transition: background 0s;
+      -ms-transition: background 0s;
+      transition: background 0s;
+      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
+    }
+
+    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+    .donate_bar .donate_txt {
+      display: block;
+      color: #9d9d9d;
+      font: 14px/2 "Microsoft Yahei";
+    }
+    .bold{ font-weight: bold; }
+  </style>
+  <!-- /css -->
+
+    <!-- Donate Module -->
+    <div id="donate_module">
+
+  <!-- btn_donate & tips -->
+  <div id="donate_board" class="donate_bar center">
+      <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+    <span class="donate_txt">
+      欣赏此文？求鼓励，求支持！
+    </span>
+      
+    
+  </div>
+  <!-- /btn_donate & tips -->
+
+  <!-- donate guide -->
+    
+  <div id="donate_guide" class="donate_bar center hidden">
+        <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+
+    <a href="/img/about/WechatPay.jpeg" title="用微信扫一扫哦~" class="fancybox" rel="article0">
+      <img src="/img/about/WechatPay.jpeg" title="微信打赏 Colin" height="190px" width="auto"/>
+    </a>
+        
+        &nbsp;&nbsp;
+
+    <a href="/img/about/AliPay.jpeg" title="用支付宝扫一扫即可~" class="fancybox" rel="article0">
+      <img src="/img/about/AliPay.jpeg" title="支付宝打赏 Colin" height="190px" width="auto"/>
+    </a>
+
+    <span class="donate_txt">
+      欣赏此文？求鼓励，求支持！
+    </span>
+
+  </div>
+  <!-- /donate guide -->
+
+  <!-- donate script -->
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function() {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+
+    function donate_on_web(){
+      $('#donate').submit();
+        }
+
+    var original_window_onload = window.onload;
+        window.onload = function () {
+            if (original_window_onload) {
+                original_window_onload();
+            }
+            document.getElementById('donate_board_wdg').className = 'hidden';
+    }
+  </script>
+  <!-- /donate script -->
+</div>
+<!-- /Donate Module -->
+   
+
+         <!-- comments -->
         <div class="comment-section">
   
     
@@ -149,7 +282,9 @@
 
 
 </div>
+
     </div>
+    
 </div>
 
                 </div>

@@ -105,10 +105,23 @@
                     <div class="row">
     <div class="main">
         <article>
-            <h1>
-                Android-使用JsBridge来优化js与本地的交互 
-            </h1>
-            <small>2016/8/22</small>
+          
+          <header class="post-header">
+          
+          </header>
+          <h1 class="post-title">Android-使用JsBridge来优化js与本地的交互</h1>
+
+          <section class="post-info">
+            <span class="post-date">2016/08/22</span>
+            
+            
+            <span class="post-tags">
+              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Android/">Android</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/JsBridge/">JsBridge</a></li></ul>
+            </span>
+            
+          </section>
+
+          <section class="post-content">
             <p>基于<a href="https://github.com/lzyzsd/JsBridge" target="_blank" rel="external">lzyzsd的JsBridge</a> 优化改进而来的Android JsBridge。</p>
 <p><a href="https://github.com/hjhrq1991/JsBridge" target="_blank" rel="external">工程传送门</a></p>
 <h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>1.支持自定义桥名；<br>2.修复web页未渲染即进行跳转导致Js桥初始化失败的问题；</p>
@@ -133,7 +146,132 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*app native调用本页面方法*/</span></div><div class="line">connectMerchantJSBridge(<span class="function"><span class="keyword">function</span>(<span class="params">bridge</span>) </span>&#123;</div><div class="line">    bridge.init(<span class="function"><span class="keyword">function</span>(<span class="params">message, responseCallback</span>) </span>&#123;</div><div class="line"></div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    bridge.registerHandler(<span class="string">"click1"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data, responseCallback</span>) </span>&#123;</div><div class="line">        responseCallback(<span class="string">"receive click1"</span>);</div><div class="line">        <span class="comment">//可以在下面执行操作</span></div><div class="line">    &#125;);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">window</span>.cmbMerchantBridge = cmbMerchantBridge;</div></pre></td></tr></table></figure>
 <h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>This project is licensed under the terms of the MIT license.</p>
 
+          </section>
         </article>
+        
+
+       
+        <div class="pager">
+          
+            <a class="post-prev pager-item" href="/2016/08/23/Nougat/" >
+              <strong class="article-nav-caption">上一篇</strong>
+              <p class="post-nav-title">Android 7.0 Nougat 的最终版发布</p>
+            </a>
+          
+          
+            <a class="post-next pager-item" href="/2016/04/21/nuwa/">
+              <strong class="article-nav-caption">下一篇</strong>
+              <p class="post-nav-title">Android开发之nuwa热修复</p>
+            </a>
+          
+        </div>
+        
+
+         <!-- comments -->
+         
+  <!-- css -->
+  <style type="text/css">
+      .center {
+          text-align: center;
+      }
+      .hidden {
+          display: none;
+      }
+    .donate_bar a.btn_donate{
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+
+      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
+           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
+         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
+         嵌入其它博客时不一定要它们。 -->
+      -webkit-transition: background 0s;
+      -moz-transition: background 0s;
+      -o-transition: background 0s;
+      -ms-transition: background 0s;
+      transition: background 0s;
+      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
+    }
+
+    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+    .donate_bar .donate_txt {
+      display: block;
+      color: #9d9d9d;
+      font: 14px/2 "Microsoft Yahei";
+    }
+    .bold{ font-weight: bold; }
+  </style>
+  <!-- /css -->
+
+    <!-- Donate Module -->
+    <div id="donate_module">
+
+  <!-- btn_donate & tips -->
+  <div id="donate_board" class="donate_bar center">
+      <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+    <span class="donate_txt">
+      欣赏此文？求鼓励，求支持！
+    </span>
+      
+    
+  </div>
+  <!-- /btn_donate & tips -->
+
+  <!-- donate guide -->
+    
+  <div id="donate_guide" class="donate_bar center hidden">
+        <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+
+    <a href="/img/about/WechatPay.jpeg" title="用微信扫一扫哦~" class="fancybox" rel="article0">
+      <img src="/img/about/WechatPay.jpeg" title="微信打赏 Colin" height="190px" width="auto"/>
+    </a>
+        
+        &nbsp;&nbsp;
+
+    <a href="/img/about/AliPay.jpeg" title="用支付宝扫一扫即可~" class="fancybox" rel="article0">
+      <img src="/img/about/AliPay.jpeg" title="支付宝打赏 Colin" height="190px" width="auto"/>
+    </a>
+
+    <span class="donate_txt">
+      欣赏此文？求鼓励，求支持！
+    </span>
+
+  </div>
+  <!-- /donate guide -->
+
+  <!-- donate script -->
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function() {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+
+    function donate_on_web(){
+      $('#donate').submit();
+        }
+
+    var original_window_onload = window.onload;
+        window.onload = function () {
+            if (original_window_onload) {
+                original_window_onload();
+            }
+            document.getElementById('donate_board_wdg').className = 'hidden';
+    }
+  </script>
+  <!-- /donate script -->
+</div>
+<!-- /Donate Module -->
+   
+
+         <!-- comments -->
         <div class="comment-section">
   
     
@@ -159,7 +297,9 @@
 
 
 </div>
+
     </div>
+    
 </div>
 
                 </div>

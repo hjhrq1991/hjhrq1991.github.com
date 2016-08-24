@@ -105,10 +105,23 @@
                     <div class="row">
     <div class="main">
         <article>
-            <h1>
-                Android 65K问题之Multidex原理分析及NoClassDefFoundError的解决方法 
-            </h1>
-            <small>2016/3/29</small>
+          
+          <header class="post-header">
+          
+          </header>
+          <h1 class="post-title">Android 65K问题之Multidex原理分析及NoClassDefFoundError的解决方法</h1>
+
+          <section class="post-info">
+            <span class="post-date">2016/03/29</span>
+            
+            
+            <span class="post-tags">
+              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/65k/">65k</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Android/">Android</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Multidex/">Multidex</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/NoClassDefFoundError/">NoClassDefFoundError</a></li></ul>
+            </span>
+            
+          </section>
+
+          <section class="post-content">
             <p>Android 65K问题相信困惑了不少人，虽然AS的出来可以通过分dex快速解决65K问题，但是同时也容易因为某些代码没有打包到MainDex里引起NoClassDefFoundError。随着5.0的推出，Android也放出了<a href="http://developer.android.com/tools/building/multidex.html" target="_blank" rel="external">Multidex Support Library</a>来解决这个问题。<br><a href="http://developer.android.com/tools/building/multidex.html" target="_blank" rel="external">Multidex Support Library</a>可以直接分包处理65K问题，并且不会发生NoClassDefFoundError的情况。</p>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>1.使用的话，首先添加依赖库：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//分包multiDexEnabled必须添加该依赖</span></div><div class="line"><span class="keyword">compile</span> <span class="string">'com.android.support:multidex:1.0.1'</span></div></pre></td></tr></table></figure></p>
 <p>2.另外开启Multidex开关：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">buildTypes &#123;</div><div class="line">    release &#123;</div><div class="line">        minifyEnabled <span class="keyword">false</span></div><div class="line">        <span class="comment">//分包</span></div><div class="line">        multiDexEnabled <span class="keyword">true</span></div><div class="line">        proguardFiles getDefaultProguardFile(<span class="string">'proguard-android.txt'</span>), <span class="string">'proguard-rules.pro'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -126,7 +139,132 @@
 <h3 id="NoClassDefFoundError"><a href="#NoClassDefFoundError" class="headerlink" title="NoClassDefFoundError"></a>NoClassDefFoundError</h3><p>Multidex固然是好的，不用再为方法数超过65536而苦恼了。但是有时往往会带来意想不到的bug，比如NoClassDefFoundError。之前我就在项目中遇到了这个问题，一启动程序就crash了，看log是由于某个类找不到引起的。</p>
 <p>通过上面的分析，我们已经得知Multidex的原理了，所以要解决一启动程序就NoClassDefFoundError的问题只需要确定该类是否正确被编译到主classes.dex中去了，如果没有被编进去的话，只要修改下maindexlist.txt文件，把这个类添加进去即可。由于maindexlist.txt这个文件是每次编译时自动生成的，手动去修改它是没用的，所以我们可以在gradle编译中新加入一个task，在create{variant}MainDexClassList这个task完成之后再去修改maindexlist.txt文件添加丢失的class。</p>
 
+          </section>
         </article>
+        
+
+       
+        <div class="pager">
+          
+            <a class="post-prev pager-item" href="/2016/04/21/nuwa/" >
+              <strong class="article-nav-caption">上一篇</strong>
+              <p class="post-nav-title">Android开发之nuwa热修复</p>
+            </a>
+          
+          
+            <a class="post-next pager-item" href="/2015/01/22/process/">
+              <strong class="article-nav-caption">下一篇</strong>
+              <p class="post-nav-title">Android-解决微信等混淆打包提示Can&#39;t process class</p>
+            </a>
+          
+        </div>
+        
+
+         <!-- comments -->
+         
+  <!-- css -->
+  <style type="text/css">
+      .center {
+          text-align: center;
+      }
+      .hidden {
+          display: none;
+      }
+    .donate_bar a.btn_donate{
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+
+      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
+           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
+         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
+         嵌入其它博客时不一定要它们。 -->
+      -webkit-transition: background 0s;
+      -moz-transition: background 0s;
+      -o-transition: background 0s;
+      -ms-transition: background 0s;
+      transition: background 0s;
+      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
+    }
+
+    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+    .donate_bar .donate_txt {
+      display: block;
+      color: #9d9d9d;
+      font: 14px/2 "Microsoft Yahei";
+    }
+    .bold{ font-weight: bold; }
+  </style>
+  <!-- /css -->
+
+    <!-- Donate Module -->
+    <div id="donate_module">
+
+  <!-- btn_donate & tips -->
+  <div id="donate_board" class="donate_bar center">
+      <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+    <span class="donate_txt">
+      欣赏此文？求鼓励，求支持！
+    </span>
+      
+    
+  </div>
+  <!-- /btn_donate & tips -->
+
+  <!-- donate guide -->
+    
+  <div id="donate_guide" class="donate_bar center hidden">
+        <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+
+    <a href="/img/about/WechatPay.jpeg" title="用微信扫一扫哦~" class="fancybox" rel="article0">
+      <img src="/img/about/WechatPay.jpeg" title="微信打赏 Colin" height="190px" width="auto"/>
+    </a>
+        
+        &nbsp;&nbsp;
+
+    <a href="/img/about/AliPay.jpeg" title="用支付宝扫一扫即可~" class="fancybox" rel="article0">
+      <img src="/img/about/AliPay.jpeg" title="支付宝打赏 Colin" height="190px" width="auto"/>
+    </a>
+
+    <span class="donate_txt">
+      欣赏此文？求鼓励，求支持！
+    </span>
+
+  </div>
+  <!-- /donate guide -->
+
+  <!-- donate script -->
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function() {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+
+    function donate_on_web(){
+      $('#donate').submit();
+        }
+
+    var original_window_onload = window.onload;
+        window.onload = function () {
+            if (original_window_onload) {
+                original_window_onload();
+            }
+            document.getElementById('donate_board_wdg').className = 'hidden';
+    }
+  </script>
+  <!-- /donate script -->
+</div>
+<!-- /Donate Module -->
+   
+
+         <!-- comments -->
         <div class="comment-section">
   
     
@@ -152,7 +290,9 @@
 
 
 </div>
+
     </div>
+    
 </div>
 
                 </div>
