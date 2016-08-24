@@ -100,26 +100,11 @@
                 <div class="scene_element scene_element--fadein">
                     <div class="row">
     <div class="main">
-if theme.donate.enabled == true
-include _partial/donate
         <article>
-          
-          <header class="post-header">
-          
-          </header>
-          <h1 class="post-title">Android-解决微信等混淆打包提示Can&#39;t process class</h1>
-
-          <section class="post-info">
-            <span class="post-date">2015/01/22</span>
-            
-            
-            <span class="post-tags">
-              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Android/">Android</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/微信/">微信</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/报错/">报错</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/混淆/">混淆</a></li></ul>
-            </span>
-            
-          </section>
-
-          <section class="post-content">
+            <h1>
+                Android-解决微信等混淆打包提示Can&#39;t process class 
+            </h1>
+            <small>2015/1/22</small>
             <p>之前做项目的时候用到了微信分享和微信支付。起初微信支付没有集成到项目里，没发现什么，打包都正常。后来集成到项目里，发现坑爹了。微信只支持一个功能集成，即只能做微信支付，或者微信分享，不能同时集成两个。因为微信在sdk的处理上出现问题，每个功能有单独的sdk，而且都是实体都是继承同一个超类实现不同方法，因此sdk没法共存。<br>终于，在11月末的时候微信推出了新的集成sdk，把各个功能集成到一起了。之后项目继续在做，所以又没出现什么问题。直到最近，在打包测试时，问题终于来了。混淆打包一直不成功，提示</p>
 <p style="text-align:center"><br><img src="/img/Process/process1.jpeg" width="60%" height="60%"><br></p>
 
@@ -140,28 +125,7 @@ include _partial/donate
 
 <p>文后附上我重新编译的proguard下载地址：<a href="http://download.csdn.net/detail/hjhrq1991/8388025" target="_blank" rel="external">点击下载</a></p>
 
-          </section>
         </article>
-        
-
-       
-        <div class="pager">
-          
-            <a class="post-prev pager-item" href="/2016/03/29/65K/" >
-              <strong class="article-nav-caption">上一篇</strong>
-              <p class="post-nav-title">Android 65K问题之Multidex原理分析及NoClassDefFoundError的解决方法</p>
-            </a>
-          
-          
-            <a class="post-next pager-item" href="/2014/12/25/ADB/">
-              <strong class="article-nav-caption">下一篇</strong>
-              <p class="post-nav-title">Android-mac下如何使用adb命令</p>
-            </a>
-          
-        </div>
-        
-
-         <!-- comments -->
         <div class="comment-section">
   
     
@@ -187,9 +151,7 @@ include _partial/donate
 
 
 </div>
-
     </div>
-    
 </div>
 
                 </div>
