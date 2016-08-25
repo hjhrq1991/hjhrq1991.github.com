@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-25T01:52:21.000Z</updated>
+  <updated>2016-08-25T02:21:28.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/08/24/Blog_Hexo_Ananlytics/"/>
     <id>http://yoursite.com/2016/08/24/Blog_Hexo_Ananlytics/</id>
     <published>2016-08-24T11:13:21.000Z</published>
-    <updated>2016-08-25T01:52:21.000Z</updated>
+    <updated>2016-08-25T02:21:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>关于Hexo的文章阅读量设置问题，大多数人都是使用不蒜子的代码实现。但是这个方法仅局限于在文章页面显示阅读数，首页是不显示的。</p>
 <p>下面介绍如何在首页及文章页面都显示文章的阅读量，显示效果如下：</p>
@@ -87,6 +87,8 @@
     
     </summary>
     
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+    
     
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
@@ -103,7 +105,7 @@
     <link href="http://yoursite.com/2016/08/23/Nougat/"/>
     <id>http://yoursite.com/2016/08/23/Nougat/</id>
     <published>2016-08-23T02:06:32.000Z</published>
-    <updated>2016-08-24T15:52:14.000Z</updated>
+    <updated>2016-08-25T02:21:49.000Z</updated>
     
     <content type="html"><![CDATA[<p style="text-align:center"><br><img border="1" src="/img/Nougat/Nougat.png" width="60%" height="60%"><br></p><br>今天 Google 宣布推出 Android 7.0 Nougat 的最终版，Nexus 设备将第一时间获得更新。同时 7.0 源码也已提交给 Android Open Source Project (AOSP) ，这意味着整个 Android 生态系统获得了最新 Android 系统。<br><br>### 设备升级<br>接下来几周 Nexus 6, Nexus 5X, Nexus 6P, Nexus 9, Nexus Player, Pixel C, and General Mobile 4G (Android One) 将获得 Android 7.0 的 OTA 升级。在此之前已加入 Android Beta 计划正在使用 7.0 开发者预览版的设备也将获得最终版升级。<br><p style="text-align:center"><br><img border="1" src="/img/Nougat/Nougat2.png" width="60%" height="60%"><br></p>
 
@@ -135,6 +137,8 @@
     
     </summary>
     
+      <category term="Android资讯" scheme="http://yoursite.com/categories/Android%E8%B5%84%E8%AE%AF/"/>
+    
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
@@ -147,7 +151,7 @@
     <link href="http://yoursite.com/2016/08/22/JsBridge/"/>
     <id>http://yoursite.com/2016/08/22/JsBridge/</id>
     <published>2016-08-22T15:11:23.000Z</published>
-    <updated>2016-08-23T11:01:38.000Z</updated>
+    <updated>2016-08-25T02:22:09.000Z</updated>
     
     <content type="html"><![CDATA[<p>基于<a href="https://github.com/lzyzsd/JsBridge" target="_blank" rel="external">lzyzsd的JsBridge</a> 优化改进而来的Android JsBridge。</p>
 <p><a href="https://github.com/hjhrq1991/JsBridge" target="_blank" rel="external">工程传送门</a></p>
@@ -181,6 +185,8 @@
     
     </summary>
     
+      <category term="Android开发" scheme="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
@@ -193,7 +199,7 @@
     <link href="http://yoursite.com/2016/04/21/nuwa/"/>
     <id>http://yoursite.com/2016/04/21/nuwa/</id>
     <published>2016-04-21T07:40:35.000Z</published>
-    <updated>2016-08-25T02:18:57.000Z</updated>
+    <updated>2016-08-25T02:22:32.000Z</updated>
     
     <content type="html"><![CDATA[<p>相信每个开发者在app版本上线后才发现有一个致命性崩溃的bug时，心中是一万只草泥马在奔跑！<br>每次发现这种bug，都只好立马上个小版本修复。这种体验着实糟糕。<br>那我们能不能动态加载一小部分代码来修复这个bug呢？<br>今天给大家带来了女娲nuwa热修复！</p>
 <h3 id="一、什么是热修复？"><a href="#一、什么是热修复？" class="headerlink" title="一、什么是热修复？"></a>一、什么是热修复？</h3><p>热修复补丁（hotfix），又称为patch，指能够修复软件漏洞的一些代码，是一种快速、低成本修复产品软件版本缺陷的方式。<br>具体原理可以查看<a href="http://mp.weixin.qq.com/s?__biz=MzI1MTA1MzM2Nw==&mid=400118620&idx=1&sn=b4fdd5055731290eef12ad0d17f39d4a&scene=0#wechat_redirect" target="_blank" rel="external">鹅厂qq空间热修复。</a></p>
@@ -230,6 +236,8 @@
     
     </summary>
     
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
@@ -244,7 +252,7 @@
     <link href="http://yoursite.com/2016/03/29/65K/"/>
     <id>http://yoursite.com/2016/03/29/65K/</id>
     <published>2016-03-29T11:44:32.000Z</published>
-    <updated>2016-08-25T02:20:00.000Z</updated>
+    <updated>2016-08-25T02:21:57.000Z</updated>
     
     <content type="html"><![CDATA[<p>Android 65K问题相信困惑了不少人，虽然AS的出来可以通过分dex快速解决65K问题，但是同时也容易因为某些代码没有打包到MainDex里引起NoClassDefFoundError。随着5.0的推出，Android也放出了<a href="http://developer.android.com/tools/building/multidex.html" target="_blank" rel="external">Multidex Support Library</a>来解决这个问题。<br><a href="http://developer.android.com/tools/building/multidex.html" target="_blank" rel="external">Multidex Support Library</a>可以直接分包处理65K问题，并且不会发生NoClassDefFoundError的情况。</p>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>1.使用的话，首先添加依赖库：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//分包multiDexEnabled必须添加该依赖</span></div><div class="line"><span class="keyword">compile</span> <span class="string">'com.android.support:multidex:1.0.1'</span></div></pre></td></tr></table></figure></p>
@@ -270,7 +278,7 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android开发" scheme="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
@@ -288,7 +296,7 @@
     <link href="http://yoursite.com/2015/01/22/process/"/>
     <id>http://yoursite.com/2015/01/22/process/</id>
     <published>2015-01-22T15:34:46.000Z</published>
-    <updated>2016-08-24T15:53:02.000Z</updated>
+    <updated>2016-08-25T02:22:17.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前做项目的时候用到了微信分享和微信支付。起初微信支付没有集成到项目里，没发现什么，打包都正常。后来集成到项目里，发现坑爹了。微信只支持一个功能集成，即只能做微信支付，或者微信分享，不能同时集成两个。因为微信在sdk的处理上出现问题，每个功能有单独的sdk，而且都是实体都是继承同一个超类实现不同方法，因此sdk没法共存。<br>终于，在11月末的时候微信推出了新的集成sdk，把各个功能集成到一起了。之后项目继续在做，所以又没出现什么问题。直到最近，在打包测试时，问题终于来了。混淆打包一直不成功，提示</p>
 <p style="text-align:center"><br><img border="1" src="/img/Process/process1.jpeg" width="60%" height="60%"><br></p>
@@ -317,6 +325,8 @@
     
     </summary>
     
+      <category term="Android开发" scheme="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
@@ -333,7 +343,7 @@
     <link href="http://yoursite.com/2014/12/25/ADB/"/>
     <id>http://yoursite.com/2014/12/25/ADB/</id>
     <published>2014-12-25T14:34:15.000Z</published>
-    <updated>2016-08-24T15:55:03.000Z</updated>
+    <updated>2016-08-25T02:22:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>相信在使用mac os X的网友都知道，mac没几个像win上豌豆荚、360助手之类的工具，在mac下做android开发就比较麻烦了，遇到adb中断，或者打包apk，没有工具很难重启adb或者把apk安装到手机上。这时候我们就需要使用adb命令了。<br>可是有些有网友又说，adb用不了，提示：commadb not found</p>
 <p style="text-align:center"><br><img border="1" src="/img/ADB/ADB1.png" width="60%" height="60%"><br></p>
@@ -353,6 +363,8 @@
     
     </summary>
     
+      <category term="Android开发" scheme="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
@@ -365,7 +377,7 @@
     <link href="http://yoursite.com/2014/10/25/recyclerview/"/>
     <id>http://yoursite.com/2014/10/25/recyclerview/</id>
     <published>2014-10-25T03:06:35.000Z</published>
-    <updated>2016-08-24T15:52:51.000Z</updated>
+    <updated>2016-08-25T02:22:26.000Z</updated>
     
     <content type="html"><![CDATA[<p>在上一篇Blog中已经讲到过了RecyclerVIew的特性等等，现在我们开始正式讲讲这个它吧。<br>RecyclerView作为listview的更新版面世，有着他得天独厚的优势：<br>第一点，就是他更完善Recycler机制，比listview的recycler机制还相对完善，可以指定recycler缓冲池中循环利用的view的数量；<br>第二点，recyclerview不再有由自己来管理子布局view了，全部交给layoutmanger管理；<br>第三点，完美解决了循环和滚动的问题，而且支持横向布局；<br>第四点，支持item动画，猿们终于不用自己写很多代码去对item设置动画，懒点可以使用默认动画，想炫点可以自己自定义动画并通过setItemAnimator()方法设置……<br>好了，不多说，优势还有很多，就让猿们自己慢慢挖掘吧。</p>
 <p>recyclerview是21新增的widget，想使用的话，需要使用以下最新的support-v7-21包，以及recyclerview的单独支持包。这两个包都可以在最新的SDK中提取出来，使用jar包或者工程都可以。</p>
@@ -387,6 +399,8 @@
       &lt;p&gt;在上一篇Blog中已经讲到过了RecyclerVIew的特性等等，现在我们开始正式讲讲这个它吧。&lt;br&gt;RecyclerView作为listview的更新版面世，有着他得天独厚的优势：&lt;br&gt;第一点，就是他更完善Recycler机制，比listview的recycler机制
     
     </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
