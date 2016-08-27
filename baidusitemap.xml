@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/08/27/TbsBridgeWebView/</loc>
+    <lastmod>2016-08-27T09:32:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android-优化不同版本系统WebView版本兼容性问题</title>
+        <pubTime>2016-08-27T07:24:17.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>WebView</tag>
+         
+        <tag>Tbs</tag>
+         
+        <tag>Chromium</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android开发" url="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2016/04/21/nuwa/</loc>
+    <lastmod>2016-08-25T02:50:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android开发之nuwa热修复</title>
+        <pubTime>2016-04-21T07:40:35.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>nuwa</tag>
+         
+        <tag>热修复</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android开发" url="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2014/10/25/recyclerview/</loc>
+    <lastmod>2016-08-25T02:50:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android5.0之RecyclerView</title>
+        <pubTime>2014-10-25T03:06:35.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>RecyclerView</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android开发" url="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/01/22/process/</loc>
+    <lastmod>2016-08-25T02:22:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android-解决微信等混淆打包提示Can't process class</title>
+        <pubTime>2015-01-22T15:34:46.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>微信</tag>
+         
+        <tag>混淆</tag>
+         
+        <tag>报错</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android开发" url="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/08/22/JsBridge/</loc>
+    <lastmod>2016-08-25T02:22:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android-使用JsBridge来优化js与本地的交互</title>
+        <pubTime>2016-08-22T15:11:23.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>JsBridge</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android开发" url="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2014/12/25/ADB/</loc>
+    <lastmod>2016-08-25T02:22:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android-mac下如何使用adb命令</title>
+        <pubTime>2014-12-25T14:34:15.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>adb</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android开发" url="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/03/29/65K/</loc>
+    <lastmod>2016-08-25T02:21:57.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android 65K问题之Multidex原理分析及NoClassDefFoundError的解决方法</title>
+        <pubTime>2016-03-29T11:44:32.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>65k</tag>
+         
+        <tag>Multidex</tag>
+         
+        <tag>NoClassDefFoundError</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android开发" url="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/08/23/Nougat/</loc>
+    <lastmod>2016-08-25T02:21:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android 7.0 Nougat 的最终版发布</title>
+        <pubTime>2016-08-23T02:06:32.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Nougat</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android资讯" url="http://yoursite.com/categories/Android%E8%B5%84%E8%AE%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/08/24/Blog_Hexo_Ananlytics/</loc>
+    <lastmod>2016-08-25T02:21:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo构建博客篇-添加访问量统计功能</title>
+        <pubTime>2016-08-24T11:13:21.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>访问量</tag>
+         
+        <tag>统计</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>
