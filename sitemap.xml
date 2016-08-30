@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Test/index.html</loc>
+    
+    <lastmod>2016-08-30T12:06:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/08/27/TbsBridgeWebView/</loc>
     
     <lastmod>2016-08-27T09:43:21.000Z</lastmod>
