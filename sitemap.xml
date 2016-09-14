@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2014/12/25/ADB/</loc>
+    
+    <lastmod>2016-09-14T06:20:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/14/ADBUsage/</loc>
+    
+    <lastmod>2016-09-14T06:19:51.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/08/27/TbsBridgeWebView/</loc>
     
     <lastmod>2016-08-27T09:43:21.000Z</lastmod>
@@ -40,13 +54,6 @@
     <loc>http://yoursite.com/2016/08/22/JsBridge/</loc>
     
     <lastmod>2016-08-25T02:22:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2014/12/25/ADB/</loc>
-    
-    <lastmod>2016-08-25T02:22:03.000Z</lastmod>
     
   </url>
   
