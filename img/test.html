@@ -78,6 +78,10 @@
 <input type="button" id="enter" value="自定义分类" onclick="GotoUrl('http://m.kkguan.com/list-547-1-0-0-0-0-0-0-0.html');"/>
 </p>
 
+<p>
+<input type="button" id="enter" value="更改标题" onclick="initTitle('更改标题啦');"/>
+</p>
+
 <script>
 
     function GotoUrl(url){
@@ -198,6 +202,16 @@
         } catch (ex) {
         }
     }
+
+function initTitle(title) {
+    var objData = new datas();
+    var csData = objData.shareData;
+    csData.title = title;
+    try {
+        cmbMerchantBridge.initSignNet(csData, "initSignNetTitle");
+    } catch (ex) {
+    }
+}
 
     /*弹窗*/
     function dialog() {
