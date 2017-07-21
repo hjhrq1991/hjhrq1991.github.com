@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2017/07/18/fontScale/</loc>
-    <lastmod>2017-07-18T06:10:30.000Z</lastmod>
+    <lastmod>2017-07-21T06:41:46.000Z</lastmod>
     <data>
         <display>
         <title>Android-禁用系统字体缩放</title>
@@ -20,6 +20,21 @@
              
               <breadCrumb title="Android开发" url="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/07/18/Spans/</loc>
+    <lastmod>2017-07-18T06:24:19.000Z</lastmod>
+    <data>
+        <display>
+        <title>SpannableString 设置不同字体大小时如何设置垂直居中</title>
+        <pubTime>2017-07-18T06:22:21.000Z</pubTime>
+        
+         
+           
         </display>
     </data>
     </url>
