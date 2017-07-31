@@ -214,7 +214,7 @@
     //客服
     function CustomerService(url) {
         var objData = new datas();
-        var csData = objData.shareData;
+        var csData = objData.csData;
         csData.url = url;
         try {
             cmbMerchantBridge.initSignNet(csData, "initSignNetCS");
@@ -235,8 +235,10 @@
 
     //调用收货地址列表
     function initAddress() {
+        var objData = new datas();
+        var addressData = objData.addressData;
         try {
-            cmbMerchantBridge.initSignNet("", "initSignNetAddress");
+            cmbMerchantBridge.initSignNet(addressData, "initSignNetAddress");
         } catch (ex) {
         }
     }
@@ -298,6 +300,10 @@
             price: "商品价格",
             image: "商品图",
             url: "http://www.kkguan.com"
+        };
+        
+        this.addressData = {
+            goods_type: 1
         }
     }
 
