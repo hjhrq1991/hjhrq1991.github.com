@@ -243,6 +243,16 @@
         }
     }
 
+    //调用发布攻略
+    function initPublish() {
+        var objData = new datas();
+        var publishData = objData.publishData;
+        try {
+            cmbMerchantBridge.initSignNet(publishData, "initSignNetPublish");
+        } catch (ex) {
+        }
+    }
+
     /*弹窗*/
     function dialog() {
         Share('url');
@@ -304,6 +314,11 @@
         
         this.addressData = {
             goods_type: 1
+        };
+        
+        this.publishData = {
+            id: "可能是试用活动id？",
+            goods_id: "试用商品id"
         }
     }
 
