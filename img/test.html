@@ -156,8 +156,14 @@
         });
                             
         bridge.registerHandler("jsAddressChoose", function (data, responseCallback) {
-            responseCallback("receive jsAddressChoose"+data);
-            <!-- 这里进行具体操作，例如请求地址数据。data为json数据：{"id":"8","region_name":"河南濮阳市华龙区","ship_address":"后果","ship_dist":"482","ship_email":"","ship_idcard":"441900199110153538","ship_idcard_positive_id":"595475","ship_idcard_positive_image":"图片地址","ship_idcard_reverse_id":"595476","ship_idcard_reverse_image":"图片地址","ship_mobile":"13790436309","ship_name":"黄还是","ship_ship_qq":"","uid":"34464"} -->
+            responseCallback("receive jsAddressChoose "+data);
+                               alert(0);
+            <!-- 这里进行具体操作，例如请求地址数据。data为json数据：与接口数据一致 -->
+            });
+                            
+        bridge.registerHandler("jsPublishStatus", function (data, responseCallback) {
+            responseCallback("receive jsPublishStatus "+data);
+            <!-- 这里进行具体操作，例如请求地址数据。data为json数据：{"status":""} 成功：success，失败：error，发布中：publish -->
             });
     })
 
