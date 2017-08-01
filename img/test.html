@@ -156,9 +156,8 @@
         });
                             
         bridge.registerHandler("jsAddressChoose", function (data, responseCallback) {
-                               GotoUrl('kkapp://kk.app/openwith?name=gotoLogin');
+            GotoUrl('kkapp://kk.app/openwith?name=gotoLogin');
             responseCallback("receive jsAddressChoose "+data);
-<!--                dialog();-->
             <!-- 这里进行具体操作，例如请求地址数据。data为json数据：与接口数据一致 -->
             });
                             
