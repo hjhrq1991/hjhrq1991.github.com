@@ -1,7 +1,6 @@
 <html>
 <body>
-    <p>
-    <title>JS桥</title>
+    <p>JS桥
     </p>
 <p>
     <input type="button" id="enter" value="我是微信支付" onclick="InitPage('wxpaysdk');"
@@ -16,13 +15,16 @@
     />
     <input type="button" id="enter" value="我是复制其他" onclick="Copy('dawangbibi','ali','mqqwpa://im/chat?chat_type=wpa&uin=800015191','打开QQ');"/>
     <input type="button" id="enter" value="我是复制其他2" onclick="Copy('dawangbibi','ali','sinaweibo://splash','打开支付宝');"/>
-
-    <input type="button" id="enter" value="我是客服啊" onclick="CustomerService('http://m.kkguan.com');"/>
-    <input type="button" id="enter" value="我是选择地址" onclick="initAddress();"/>
 </p>
 
 <p>
-<title>固定链接调用原生</title>
+<input type="button" id="enter" value="我是客服啊" onclick="CustomerService('http://m.kkguan.com');"/>
+<input type="button" id="enter" value="我是选择地址" onclick="initAddress();"/>
+<input type="button" id="enter" value="我是试用报告" onclick="initPublish();"/>
+</p>
+
+<p>
+固定链接调用原生
 </p>
 
 <p>
@@ -163,7 +165,7 @@
                             
         bridge.registerHandler("jsPublishStatus", function (data, responseCallback) {
             responseCallback("receive jsPublishStatus "+data);
-            <!-- 这里进行具体操作，例如请求地址数据。data为json数据：{"status":""} 成功：success，失败：error，发布中：publish -->
+            <!-- 这里进行具体操作，例如请求地址数据。data为json数据：{"status":"", "id":""} 成功：success，失败：error，发布中：publish -->
             });
     })
 
@@ -323,8 +325,8 @@
         };
         
         this.publishData = {
-            id: "可能是试用活动id？",
-            goods_id: "试用商品id"
+            id: 1,
+            goods_id: 1
         }
     }
 
