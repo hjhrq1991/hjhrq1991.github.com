@@ -217,14 +217,13 @@
     function Share(type) {
         var objData = new datas();
         var shareData = objData.shareData;
+        shareData.type = type;
         if (type == "pic") {
             shareData.imgurl = objData.shareImgurl;
             shareData.type = "pyq_ic";
         } else if (type == "url") {
             shareData.url = objData.shareUrl;
             shareData.type = "pyq";
-        } else{
-            shareData.type = type;
         }
         try {
             cmbMerchantBridge.initSignNet(shareData, "initSignNetShare");
