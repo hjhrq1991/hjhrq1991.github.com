@@ -223,6 +223,8 @@
         } else if (type == "url") {
             shareData.url = objData.shareUrl;
             shareData.type = "pyq";
+        } else{
+            shareData.type = type;
         }
         try {
             cmbMerchantBridge.initSignNet(shareData, "initSignNetShare");
