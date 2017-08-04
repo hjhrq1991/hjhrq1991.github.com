@@ -16,11 +16,22 @@
     <input type="button" id="enter" value="我是复制其他" onclick="Copy('dawangbibi','ali','mqqwpa://im/chat?chat_type=wpa&uin=800015191','打开QQ');"/>
     <input type="button" id="enter" value="我是复制其他2" onclick="Copy('dawangbibi','ali','sinaweibo://splash','打开支付宝');"/>
 </p>
-
 <p>
 <input type="button" id="enter" value="我是客服啊" onclick="CustomerService('http://m.kkguan.com');"/>
 <input type="button" id="enter" value="我是选择地址" onclick="initAddress();"/>
 <input type="button" id="enter" value="我是试用报告" onclick="initPublish();"/>
+</p>
+<p>JS桥分享
+</p>
+<p>
+<input type="button" id="enter" value="微信好友" onclick="Share('wx');"
+<input type="button" id="enter" value="微信好友单图" onclick="Share('wx_ic');"
+<input type="button" id="enter" value="朋友圈分享" onclick="Share('pyq');"
+<input type="button" id="enter" value="朋友圈单图" onclick="Share('pyq_ic');"
+<input type="button" id="enter" value="qq好友" onclick="Share('qq');"
+<input type="button" id="enter" value="qq空间" onclick="Share('qqzone');"
+<input type="button" id="enter" value="新浪微博" onclick="Share('sina');"
+<input type="button" id="enter" value="分享面板" onclick="Share('board');"
 </p>
 
 <p>
@@ -288,8 +299,8 @@
         this.shareData = {
             title: "hello share title",
             content: "hello share content",
-            imgurl: "",
-            url: "",
+            imgurl: "http://www.kkguan.com/res/upload/image/source/bd/97/bd97e3348fd40a598f1943fa6475ee87.jpg",
+            url: "http://hjhrq1991.info",
             type: ""
         };
 
