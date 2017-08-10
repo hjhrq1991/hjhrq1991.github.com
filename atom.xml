@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-18T06:24:19.000Z</updated>
+  <updated>2017-07-21T06:41:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,20 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>SpannableString 设置不同字体大小时如何设置垂直居中</title>
-    <link href="http://yoursite.com/2017/07/18/Spans/"/>
-    <id>http://yoursite.com/2017/07/18/Spans/</id>
-    <published>2017-07-18T06:22:21.000Z</published>
-    <updated>2017-07-18T06:24:19.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Android-禁用系统字体缩放</title>
