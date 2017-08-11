@@ -173,6 +173,11 @@
             responseCallback("receive jsPublishStatus "+data);
             <!-- 这里进行具体操作，例如请求地址数据。data为json数据：{"status":"", "id":""} 成功：success，失败：error，发布中：publish -->
             });
+                            
+                            bridge.registerHandler("jsShareStatus", function (data, responseCallback) {
+                                                   responseCallback("receive jsShareStatus "+data);
+                                                   <!-- 这里进行具体操作，例如请求地址数据。data为json数据：{"status":""} 实际操作，只要app调用了分享api立马就回调成功-->
+                                                   });
     })
 
 
