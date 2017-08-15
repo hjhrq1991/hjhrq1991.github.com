@@ -15,6 +15,8 @@
     <input type="button" id="enter" value="我是客服啊" onclick="CustomerService('http://m.kkguan.com');"/>
     <input type="button" id="enter" value="我是选择地址" onclick="initAddress();"/>
     <input type="button" id="enter" value="我是试用报告" onclick="initPublish();"/>
+    <input type="button" id="enter" value="我是扫描小票" onclick="initReceipt();"/>
+    
 </p>
 <p>JS桥分享
 </p>
@@ -178,6 +180,11 @@
                                                    responseCallback("receive jsShareStatus "+data);
                                                    <!-- 这里进行具体操作，例如请求地址数据。data为json数据：{"status":""} 实际操作，只要app调用了分享api立马就回调成功-->
                                                    });
+                            
+                            bridge.registerHandler("jsReceiptStatus", function (data, responseCallback) {
+                                                   responseCallback("receive Receipt "+data);
+                                                   <!-- 这里进行具体操作，例如请求地址数据。data为json数据：{"receipt":""} receipt为小票图片地址-->
+                                                   });
     })
 
 
@@ -269,6 +276,14 @@
         var publishData = objData.publishData;
         try {
             cmbMerchantBridge.initSignNet(publishData, "initSignNetPublish");
+        } catch (ex) {
+        }
+    }
+
+    //调用扫描小票
+    function initReceipt() {
+        try {
+            cmbMerchantBridge.initSignNet("", "initSignNetReceipt");
         } catch (ex) {
         }
     }
