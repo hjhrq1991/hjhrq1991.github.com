@@ -1,0 +1,332 @@
+<html>
+    <body>
+        <p>JS桥
+        </p>
+        <p>
+        <input type="button" id="enter" value="我是微信支付" onclick="InitPage('wxpaysdk');"/>
+        <input type="button" id="enter" value="我是支付宝啊" onclick="InitPage('aliPaysdk');"/>
+        <input type="button" id="enter" value="我是余额啊" onclick="InitPage('wallet');"/>
+        <input type="button" id="enter" value="我是招行啊" onclick="InitPage('cmbbanksdk');"/>
+        <input type="button" id="enter" value="我是复制微信号啊" onclick="Copy('dawangbibi','wx','weixin://','打开微信');"/>
+        <input type="button" id="enter" value="我是复制其他" onclick="Copy('dawangbibi','ali','mqqwpa://im/chat?chat_type=wpa&uin=800015191','打开QQ');"/>
+        <input type="button" id="enter" value="我是复制其他2" onclick="Copy('dawangbibi','ali','sinaweibo://splash','打开支付宝');"/>
+        </p>
+        <p>
+        <input type="button" id="enter" value="我是客服啊" onclick="CustomerService('http://m.kkguan.com');"/>
+        <input type="button" id="enter" value="我是选择地址" onclick="initAddress();"/>
+        <input type="button" id="enter" value="我是试用报告" onclick="initPublish();"/>
+        <input type="button" id="enter" value="我是扫描小票" onclick="initReceipt();"/>
+        
+        </p>
+        <p>JS桥分享
+        </p>
+        <p>
+        <input type="button" id="enter" value="微信好友" onclick="Share('wx');"/>
+        <input type="button" id="enter" value="微信好友单图" onclick="Share('wx_ic');"/>
+        <input type="button" id="enter" value="朋友圈分享" onclick="Share('pyq');"/>
+        <input type="button" id="enter" value="朋友圈单图" onclick="Share('pyq_ic');"/>
+        <input type="button" id="enter" value="qq好友" onclick="Share('qq');"/>
+        <input type="button" id="enter" value="qq空间" onclick="Share('qqzone');"/>
+        <input type="button" id="enter" value="新浪微博" onclick="Share('sina');"/>
+        <input type="button" id="enter" value="分享面板" onclick="Share('board');"/>
+        </p>
+        
+        <p>
+        固定链接调用原生
+        </p>
+        
+        <p>
+        <input type="button" id="enter" value="找回密码" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoRetrievePassword');"/>
+        <input type="button" id="enter" value="分享qq好友" onclick="GotoUrl('kkapp://kk.app/openwith?name=shareToQQFriends');"/>
+        <input type="button" id="enter" value="分享qq空间" onclick="GotoUrl('kkapp://kk.app/openwith?name=shareToQQZone');"/>
+        <input type="button" id="enter" value="分享新浪微博" onclick="GotoUrl('kkapp://kk.app/openwith?name=shareToSinaWeibo');"/>
+        <input type="button" id="enter" value="快捷办理黑丝卡" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoBuyVip');"/>
+        <input type="button" id="enter" value="我的钱包" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoWallet');"/>
+        </p>
+        <p>
+        <input type="button" id="enter" value="咖啡兑换券" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoMyCoffeeCoupons');"/>
+        <input type="button" id="enter" value="余额充值" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoBalanceRecharge');"/>
+        <input type="button" id="enter" value="充值券" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoMyRechargeCoupons');"/>
+        <input type="button" id="enter" value="攻略收藏" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoArticleCollections');"/>
+        <input type="button" id="enter" value="设置收货地址" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoAddressList');"/>
+        <input type="button" id="enter" value="个人资料" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoUserInfo');"/>
+        </p>
+        <p>
+        <input type="button" id="enter" value="订单列表" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoOrderList');"/>
+        <input type="button" id="enter" value="攻略标签主页" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoTag&id=10');"/>
+        <input type="button" id="enter" value="用户主页" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoOtherUserInfo&id=23055&phone=phone');"/>
+        <input type="button" id="enter" value="发现-关注" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoDiscoverFollow');"/>
+        <input type="button" id="enter" value="发现-广场" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoSquare');"/>
+        <input type="button" id="enter" value="扫码" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoScan');"/>
+        </p>
+        
+        <p>
+        <input type="button" id="enter" value="黑丝详情" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoGroupCardDetail');"/>
+        <input type="button" id="enter" value="分类-分类" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoCategories');"/>
+        <input type="button" id="enter" value="分类-国家" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoCountries');"/>
+        <input type="button" id="enter" value="分类-品牌" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoBrands');"/>
+        <input type="button" id="enter" value="搜索页" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoSearch&keyword=keyword');"/>
+        <input type="button" id="enter" value="个人中心" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoUserCenter');"/>
+        <input type="button" id="enter" value="分享面板" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoShareboard');"/>
+        </p>
+        
+        <p>
+        <input type="button" id="enter" value="疯狂折扣列表" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoCrazyActivity');"/>
+        <input type="button" id="enter" value="疯狂折扣列表-商品" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoCrazyActivity&goods_id=43936');"/>
+        <input type="button" id="enter" value="疯狂折扣列表-场次" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoCrazyActivity&active_id=903');"/>
+        <input type="button" id="enter" value="疯狂折扣列表-场次商品" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoCrazyActivity&active_id=903&goods_id=43936');"/>
+        <input type="button" id="enter" value="疯狂折扣明日预告" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoCrazyActivityTommorow');"/>
+        <input type="button" id="enter" value="疯狂折扣商品详情" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoGoodsCrazyActivity&id=37943');"/>
+        </p>
+        
+        <p>
+        <input type="button" id="enter" value="注册" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoRegister');"/>
+        <input type="button" id="enter" value="登陆" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoLogin');"/>
+        <input type="button" id="enter" value="咖啡馆" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoCafe');"/>
+        <input type="button" id="enter" value="商品详情" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoGoods&id=42185');"/>
+        <input type="button" id="enter" value="分类" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoCategory&id=635');"/>
+        <input type="button" id="enter" value="咖啡详情" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoCoffee&id=247');"/>
+        <input type="button" id="enter" value="攻略详情" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoArticle&id=635');"/>
+        <input type="button" id="enter" value="自定义搜索" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoList&cates=&page=&order=&sort=&brands=&specs=&attrs=&price=&keywords=我的美丽日记');"/>
+        <input type="button" id="enter" value="自定义品牌" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoList&cates=&page=&order=&sort=&brands=2968&specs=&attrs=&price=&keywords=');"/>
+        <input type="button" id="enter" value="自定义分类" onclick="GotoUrl('kkapp://kk.app/openwith?name=gotoList&cates=547&page=1&order=&sort=&brands=&specs=&attrs=&price=&keywords=');"/>
+        <input type="button" id="enter" value="自定义分类" onclick="GotoUrl('http://m.kkguan.com/list-547-1-0-0-0-0-0-0-0.html');"/>
+        </p>
+        
+        <p>
+        <input type="button" id="enter" value="更改标题" onclick="initTitle('更改标题啦');"/>
+        </p>
+        <p>
+        
+        <input type="button" id="enter" value="deep linking测试" onclick="GotoUrl('https://bnctestbed.test-app.link/qM9VbIDP5B');"/>
+        
+        <input type="button" id="enter" value="Scheme测试" onclick="GotoUrl('xl://goods:8888/goodsDetail?goodsId=10011002');"/>
+        
+        <a href="xl://goods:8888/goodsDetail?goodsId=10011002">打开商品详情</a>
+        
+        </p>
+        
+        <script>
+            function GotoUrl(url){
+                window.location.href=url;
+            }
+        var default_data = {
+            error: "1"
+        };
+        var connectMerchantJSBridge = function (callback) {
+            try {
+                if (window.WebViewJavascriptBridge) {
+                    callback(WebViewJavascriptBridge);
+                } else {
+                    document.addEventListener("WebViewJavascriptBridgeReady", function () {
+                                              callback(WebViewJavascriptBridge);
+                                              }, false);
+                }
+            } catch (ex) {
+            }
+        };
+        var cmbMerchantBridge = {
+            initSignNet: function (payData, name) {
+                if (!payData) {
+                    payData = default_data;
+                }
+                connectMerchantJSBridge(function (bridge) {
+                                        if (typeof bridge === "undefined") {
+                                        return;
+                                        }
+                                        bridge.callHandler(name, JSON.stringify(payData));
+                                        });
+            },
+        };
+        /*app native调用本页面方法*/
+        connectMerchantJSBridge(function (bridge) {
+                                bridge.init(function (message, responseCallback) {
+                                            });
+                                bridge.registerHandler("clickShare", function (data, responseCallback) {
+                                                       responseCallback("call share");
+                                                       /*弹窗*/
+                                                       dialog();
+                                                       });
+                                bridge.registerHandler("payStatus", function (data, responseCallback) {
+                                                       responseCallback("receive payStatus");
+                                                       <!-- 这里进行支付操作,data: success：成功，error：失败 -->
+                                                       });
+                                bridge.registerHandler("makeMoreProfit", function (data, responseCallback) {
+                                                       responseCallback("receive makeMoreProfit");
+                                                       <!-- 这里进行赚更多的操作，例如弹出提示框 -->
+                                                       });
+                                
+                                bridge.registerHandler("jsAddressChoose", function (data, responseCallback) {
+                                                       GotoUrl('kkapp://kk.app/openwith?name=gotoLogin');
+                                                       responseCallback("receive jsAddressChoose "+data);
+                                                       <!-- 这里进行具体操作，例如请求地址数据。data为json数据：与接口数据一致 -->
+                                                       });
+                                
+                                bridge.registerHandler("jsPublishStatus", function (data, responseCallback) {
+                                                       responseCallback("receive jsPublishStatus "+data);
+                                                       <!-- 这里进行具体操作，例如请求地址数据。data为json数据：{"status":"", "id":""} 成功：success，失败：error，发布中：publish -->
+                                                       });
+                                
+                                bridge.registerHandler("jsShareStatus", function (data, responseCallback) {
+                                                       responseCallback("receive jsShareStatus "+data);
+                                                       <!-- 这里进行具体操作，例如请求地址数据。data为json数据：{"status":""} 实际操作，只要app调用了分享api立马就回调成功-->
+                                                       });
+                                
+                                bridge.registerHandler("jsReceiptStatus", function (data, responseCallback) {
+                                                       responseCallback("receive Receipt "+data);
+                                                       <!-- 这里进行具体操作，例如请求地址数据。data为json数据：{"receipt":""} receipt为小票图片地址-->
+                                                       });
+                                })
+                                window.cmbMerchantBridge = cmbMerchantBridge;
+                                function InitPage(type) {
+                                    var objData = new datas();
+                                    var payData = objData.payData;
+                                    payData.payment_type = type;
+                                    try {
+                                        cmbMerchantBridge.initSignNet(payData, "initSignNetPay");
+                                    } catch (ex) {
+                                    }
+                                }
+        //复制
+        function Copy(content, type, href, btnText) {
+            var objData = new datas();
+            var copyData = objData.copyData;
+            copyData.content = content;
+            copyData.type = type;
+            //可以替换弹框标题
+            //copyData.title = "";
+            //可以替换弹框内容
+            //copyData.text = "";
+            //可以替换地址
+            copyData.href = href;
+            //可以替换按钮内容
+            copyData.btn_text = btnText;
+            try {
+                cmbMerchantBridge.initSignNet(copyData, "initSignNetCopy");
+            } catch (ex) {
+            }
+        }
+        function Share(type) {
+            var objData = new datas();
+            var shareData = objData.shareData;
+            shareData.type = type;
+            if (type == "pic") {
+                shareData.imgurl = objData.shareImgurl;
+                shareData.type = "pyq_ic";
+            } else if (type == "url") {
+                shareData.url = objData.shareUrl;
+                shareData.type = "pyq";
+            }
+            try {
+                cmbMerchantBridge.initSignNet(shareData, "initSignNetShare");
+            } catch (ex) {
+            }
+        }
+        //客服
+        function CustomerService(url) {
+            var objData = new datas();
+            var csData = objData.csData;
+            csData.url = url;
+            try {
+                cmbMerchantBridge.initSignNet(csData, "initSignNetCS");
+            } catch (ex) {
+            }
+        }
+        //设置标题
+        function initTitle(title) {
+            var objData = new datas();
+            var csData = objData.shareData;
+            csData.title = title;
+            try {
+                cmbMerchantBridge.initSignNet(csData, "initSignNetTitle");
+            } catch (ex) {
+            }
+        }
+        //调用收货地址列表
+        function initAddress() {
+            var objData = new datas();
+            var addressData = objData.addressData;
+            try {
+                cmbMerchantBridge.initSignNet(addressData, "initSignNetAddress");
+            } catch (ex) {
+            }
+        }
+        //调用发布攻略
+        function initPublish() {
+            var objData = new datas();
+            var publishData = objData.publishData;
+            try {
+                cmbMerchantBridge.initSignNet(publishData, "initSignNetPublish");
+            } catch (ex) {
+            }
+        }
+        //调用扫描小票
+        function initReceipt() {
+            try {
+                cmbMerchantBridge.initSignNet("", "initSignNetReceipt");
+            } catch (ex) {
+            }
+        }
+        /*弹窗*/
+        function dialog() {
+            Share('url');
+        }
+        <!-- 按钮开关 -->
+        $(function () {
+          var objData = new datas();
+          var handleData = objData.handleData;
+          cmbMerchantBridge.initSignNet(handleData, "jsHandle");
+          })
+          <!-- 赚更多开关 -->
+          $(function () {
+            var objData = new datas();
+            var handleData = objData.handleData;
+            cmbMerchantBridge.initSignNet(handleData, "makeMoreProfit");
+            })
+            function datas() {
+                this.shareUrl = "http://www.kkguan.com";
+                this.shareImgurl = "http://www.kkguan.com/res/upload/image/source/bd/97/bd97e3348fd40a598f1943fa6475ee87.jpg";
+                this.shareData = {
+                    title: "hello share title",
+                    content: "hello share content",
+                    imgurl: "http://www.kkguan.com/res/upload/image/source/bd/97/bd97e3348fd40a598f1943fa6475ee87.jpg",
+                    url: "http://hjhrq1991.info",
+                    type: ""
+                };
+                this.payData = {
+                    payment_type: "wxpaysdk",
+                    out_trade_no: "1231223"
+                };
+                this.handleData = {
+                    status: "ok",
+                    url: "http://www.kkguan.com"
+                };
+                this.copyData = {
+                    title: "已帮您复制微信号",
+                    text: "请打开 微信->右上角->添加朋友->粘贴->搜索",
+                    content: "dawangok",
+                    type: "wx",
+                    href: "weixin://",
+                    btn_text: "打开微信"
+                };
+                this.csData = {
+                    title: "标题，",
+                    desc: "描述",
+                    note: "商品价格",
+                    picture: "商品图",
+                    url: "http://www.kkguan.com"
+                };
+                
+                this.addressData = {
+                    id: 29,
+                    goods_type: 1 
+                };
+                
+                this.publishData = {
+                    id: 1,
+                    goods_id: 1
+                }
+            }
+        </script>
+    </body>
+</html>
