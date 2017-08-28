@@ -270,11 +270,11 @@
         }
 
         //按钮
-        function initBtn(contant, type) {
+        function initBtn(content, type) {
             try {
                 var objData = new datas();
                 var handleData = objData.handleData;
-                handleData.contant = contant;
+                handleData.content = content;
                 handleData.type = type;
                 cmbMerchantBridge.initSignNet(handleData, "jsHandle");
             } catch (ex) {
