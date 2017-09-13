@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/09/13/ScreenAdapter/</loc>
+    <lastmod>2017-09-13T05:56:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android屏幕适配终极方案-实战篇</title>
+        <pubTime>2017-09-13T05:50:56.000Z</pubTime>
+        
+        <tag>Andoird</tag>
+         
+        <tag>屏幕</tag>
+         
+        <tag>适配</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/08/23/Nougat/</loc>
     <lastmod>2017-09-13T05:51:43.000Z</lastmod>
     <data>
@@ -20,27 +41,6 @@
              
               <breadCrumb title="Android资讯" url="http://yoursite.com/categories/Android%E8%B5%84%E8%AE%AF/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/09/13/ScreenAdapter/</loc>
-    <lastmod>2017-09-13T05:51:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android屏幕适配终极方案-实战篇</title>
-        <pubTime>2017-09-13T05:50:56.000Z</pubTime>
-        
-        <tag>Andoird</tag>
-         
-        <tag>屏幕</tag>
-         
-        <tag>适配</tag>
-         
-         
-           
         </display>
     </data>
     </url>
