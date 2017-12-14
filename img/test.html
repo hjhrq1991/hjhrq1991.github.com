@@ -97,22 +97,13 @@
         
         <p>
         <input type="button" id="enter" value="更改标题" onclick="initTitle('更改标题啦');"/>
+        <input type="button" id="enter" value="体验店详情" onclick="store('1','体验店');"/>
         </p>
-        <p>
         
+        <p>
         <input type="button" id="enter" value="deep linking测试" onclick="GotoUrl('https://bnctestbed.test-app.link/qM9VbIDP5B');"/>
-        
         <input type="button" id="enter" value="Scheme测试" onclick="GotoUrl('xl://goods:8888/goodsDetail?goodsId=10011002');"/>
-        
         <a href="xl://goods:8888/goodsDetail?goodsId=10011002">打开商品详情</a>
-        </p>
-        
-        <p>
-        <a href="https://download.kkguan.com/app/kkguan3.1.0.apk">下载测试</a>
-        <a href="https://download.kkguan.com/app/kkguan3.1.0.apk" download>下载属性测试</a>
-        <a href="http://www.webhek.com/wordpress/wp-content/themes/webhek2/images/follow-us.jpg?8fe47c" download="我改名了.jpg">下载图片</a>
-        <a href="http://blog.csdn.net/leytton" download="Leytton.pdf">下载网页</a>
-
         </p>
         
         <script>
@@ -196,6 +187,19 @@
                                     } catch (ex) {
                                     }
                                 }
+        
+        //体验店详情
+        function store(id, name) {
+            var objData = new datas();
+            var storeData = objData.storeData;
+            storeData.store_id = id;
+            storeData.store_name = name;
+            try {
+                cmbMerchantBridge.initSignNet(storeData, "initSignNetStore");
+            } catch (ex) {
+            }
+        }
+        
         //复制
         function Copy(content, type, href, btnText) {
             var objData = new datas();
@@ -366,6 +370,11 @@
                 
                 this.tokenData = {
                     token=""
+                };
+                
+                this.storeData = {
+                    store_id="",
+                    store_name=""
                 }
             }
         </script>
