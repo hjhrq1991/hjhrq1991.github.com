@@ -97,6 +97,7 @@
         
         <p>
         <input type="button" id="enter" value="更改标题" onclick="initTitle('更改标题啦');"/>
+        <input type="button" id="enter" value="体验店详情" onclick="store();"/>
         </p>
         <p>
         
@@ -105,6 +106,7 @@
         <input type="button" id="enter" value="Scheme测试" onclick="GotoUrl('xl://goods:8888/goodsDetail?goodsId=10011002');"/>
         
         <a href="xl://goods:8888/goodsDetail?goodsId=10011002">打开商品详情</a>
+        
         </p>
         
         <p>
@@ -196,6 +198,17 @@
                                     } catch (ex) {
                                     }
                                 }
+        
+        //体验店详情
+        function store() {
+            var objData = new datas();
+            var storeData = objData.storeData;
+            try {
+                cmbMerchantBridge.initSignNet(storeData, "initSignNetStore");
+            } catch (ex) {
+            }
+        }
+        
         //复制
         function Copy(content, type, href, btnText) {
             var objData = new datas();
@@ -366,6 +379,10 @@
                 
                 this.tokenData = {
                     token=""
+                };
+                this.storeData = {
+                    store_id="",
+                    store_name=""
                 }
             }
         </script>
