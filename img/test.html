@@ -97,7 +97,7 @@
         
         <p>
         <input type="button" id="enter" value="更改标题" onclick="initTitle('更改标题啦');"/>
-        <input type="button" id="enter" value="体验店详情" onclick="store();"/>
+        <input type="button" id="enter" value="体验店详情" onclick="store('1','体验店');"/>
         </p>
         <p>
         
@@ -200,9 +200,11 @@
                                 }
         
         //体验店详情
-        function store() {
+        function store(id, name) {
             var objData = new datas();
             var storeData = objData.storeData;
+            storeData.store_id = id;
+            storeData.store_name = name;
             try {
                 cmbMerchantBridge.initSignNet(storeData, "initSignNetStore");
             } catch (ex) {
@@ -380,6 +382,7 @@
                 this.tokenData = {
                     token=""
                 };
+                
                 this.storeData = {
                     store_id="",
                     store_name=""
