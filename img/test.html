@@ -287,13 +287,25 @@
         function tokenLogin(token) {
             try {
                 var objData = new datas();
-                var handleData = objData.handleData;
-                handleData.token = token;
-                handleData.type = type;
-                cmbMerchantBridge.initSignNet(handleData, "initSignNetLogin");
+                var tokenData = objData.tokenData;
+                tokenData.token = token;
+                cmbMerchantBridge.initSignNet(tokenData, "initSignNetLogin");
             } catch (ex) {
             }
         }
+        
+        //体验店详情
+        function store(id, name) {
+            var objData = new datas();
+            var storeData = objData.storeData;
+            storeData.store_id = id;
+            storeData.store_name = name;
+            try {
+                cmbMerchantBridge.initSignNet(storeData, "initSignNetStore");
+            } catch (ex) {
+            }
+        }
+        
         /*弹窗*/
         function dialog() {
             Share('url');
@@ -359,6 +371,11 @@
                 
                 this.tokenData = {
                     token=""
+                };
+                
+                this.storeData = {
+                    store_id="",
+                    store_name=""
                 }
             }
         </script>
