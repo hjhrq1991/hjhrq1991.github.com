@@ -18,7 +18,6 @@
         <input type="button" id="enter" value="我是扫描小票" onclick="initReceipt();"/>
         <input type="button" id="enter" value="我是按钮" onclick="initBtn('规则','');"/>
         <input type="button" id="enter" value="我是字体按钮" onclick="initBtn('&#xe652;','iconfont');"/>
-        <input type="button" id="enter" value="token登录" onclick="tokenLogin('b3757ab3918c99f67c1d3d544452671e');"/>
         </p>
         <p>JS桥分享
         </p>
@@ -280,18 +279,6 @@
             } catch (ex) {
             }
         }
-        
-        //按钮
-        function tokenLogin(token) {
-            try {
-                var objData = new datas();
-                var handleData = objData.handleData;
-                handleData.token = token;
-                handleData.type = type;
-                cmbMerchantBridge.initSignNet(handleData, "initSignNetLogin");
-            } catch (ex) {
-            }
-        }
         /*弹窗*/
         function dialog() {
             Share('url');
@@ -353,10 +340,6 @@
                 this.publishData = {
                     id: 1,
                     goods_id: 1
-                };
-                
-                this.tokenData = {
-                    token=""
                 }
             }
         </script>
