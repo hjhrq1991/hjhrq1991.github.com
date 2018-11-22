@@ -235,7 +235,7 @@
         }
         function ShareInfo() {
             try {
-                cmbMerchantBridge.initSignNet("{"is_available":true,"share_title":"分享标题","share_content":"分享内容描述","link":"http://m.t.kkguan.com/invite/sharevip?uc=558a28d2acab7fc80641879327561d56","share_res_id":"https://cdn.kkguan.com/5c/66/5c6676f604e47968b1eb77af46694cbe.jpg?imageView2/0/interlace/1","userName":"gh_c708b35ec9b0","path":"/invite/share/index?uc=558a28d2acab7fc80641879327561d56","description":"加入KK馆黑丝会员享全场5折，还能分享赚钱，“花钱”变赚钱","thumbData":"https://cdn.kkguan.com/5c/66/5c6676f604e47968b1eb77af46694cbe.jpg?imageView2/0/interlace/1"}", "initSignNetShareInfo");
+                cmbMerchantBridge.initSignNet(new datas().shareInfo, "initSignNetShareInfo");
             } catch (ex) {
             }
         }
@@ -349,6 +349,17 @@
                     path: "pages/home/index",
                     description: "",
                     thumbData: "http://www.kkguan.com/res/upload/image/source/bd/97/bd97e3348fd40a598f1943fa6475ee87.jpg"
+                };
+                this.shareInfo = {
+                    is_available: true,
+                    share_title: "分享标题",
+                    share_content: "分享内容描述",
+                    share_res_id: "http://www.kkguan.com/res/upload/image/source/bd/97/bd97e3348fd40a598f1943fa6475ee87.jpg",
+                    link: "http://hjhrq1991.info",
+                    userName: "gh_c708b35ec9b0",
+                    path: "/invite/share/index?uc=558a28d2acab7fc80641879327561d56",
+                    description: "加入KK馆黑丝会员享全场5折，还能分享赚钱，“花钱”变赚钱",
+                    thumbData: "https://cdn.kkguan.com/5c/66/5c6676f604e47968b1eb77af46694cbe.jpg?imageView2/0/interlace/1"
                 };
                 this.payData = {
                     payment_type: "wxpaysdk",
