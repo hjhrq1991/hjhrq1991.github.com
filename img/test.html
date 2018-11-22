@@ -234,8 +234,10 @@
             }
         }
         function ShareInfo() {
+            var objData = new datas();
+            var shareInfo = objData.shareInfo;
             try {
-                cmbMerchantBridge.initSignNet(new datas().shareInfo, "initSignNetShareInfo");
+                cmbMerchantBridge.initSignNet(shareInfo, "initSignNetShareInfo");
             } catch (ex) {
             }
         }
