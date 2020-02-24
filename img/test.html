@@ -100,6 +100,7 @@
         <p>
         <input type="button" id="enter" value="更改标题" onclick="initTitle('更改标题啦');"/>
         <input type="button" id="enter" value="体验店详情" onclick="store('1','体验店');"/>
+        <input type="button" id="enter" value="体验店详情" onclick="jsgoto();"/>
         </p>
         
         <p>
@@ -322,6 +323,15 @@
             }
         }
 
+        function jsgoto() {
+            var objData = new datas();
+            var gotoData = objData.gotoData;
+            try {
+                cmbMerchantBridge.initSignNet(gotoData, "initSignNetGoto");
+            } catch (ex) {
+            }
+        }
+
         /*弹窗*/
         function dialog() {
             Share('url');
@@ -404,6 +414,12 @@
                 this.storeData = {
                     store_id: "",
                     store_name: ""
+                };
+
+                this.gotoData = {
+                    goto: "kkapp://kk.app/openwith?name=gotoLogin&type=wxAuth&phone=15625537274",
+                    canBack: true, 
+                    back_url: "https://www.kkguan.com"
                 }
             }
         </script>
