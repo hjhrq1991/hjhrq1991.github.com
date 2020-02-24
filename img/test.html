@@ -326,7 +326,8 @@
         //跳转处理
         function jsgoto() {
             try {
-                cmbMerchantBridge.initSignNet("storeData", "initSignNetStore");
+                cmbMerchantBridge.initSignNet("csData", "initSignNetTitle");
+
                 // cmbMerchantBridge.initSignNet("{\"goto_link\":\"kkapp://kk.app/openwith?name=gotoLogin&type=wxAuth&phone=15625537274\",\"canBack\":true, \"back_link\":\"https://www.kkguan.com\"}", "initSignNetGoto");
             } catch (ex) {
             }
