@@ -325,13 +325,8 @@
 
         //跳转处理
         function jsgoto() {
-            var objData = new datas();
-            var gotoData = objData.gotoData;
-            gotoData.goto_link = "kkapp://kk.app/openwith?name=gotoLogin&type=wxAuth&phone=15625537274";
-            gotoData.canBack = true;
-            gotoData.back_link = "https://www.kkguan.com";
             try {
-                cmbMerchantBridge.initSignNet(gotoData, "initSignNetGoto");
+                cmbMerchantBridge.initSignNet("{\"goto_link\":\"kkapp://kk.app/openwith?name=gotoLogin&type=wxAuth&phone=15625537274\",\"canBack\":true, \"back_link\":\"https://www.kkguan.com\"}", "initSignNetGoto");
             } catch (ex) {
             }
         }
@@ -340,18 +335,21 @@
         function dialog() {
             Share('url');
         }
-        <!-- 按钮开关 -->
+        
+        // <!-- 按钮开关 -->
         $(function () {
           var objData = new datas();
           var handleData = objData.handleData;
           cmbMerchantBridge.initSignNet(handleData, "jsHandle");
           })
-          <!-- 赚更多开关 -->
+
+        //   <!-- 赚更多开关 -->
           $(function () {
             var objData = new datas();
             var handleData = objData.handleData;
             cmbMerchantBridge.initSignNet(handleData, "makeMoreProfit");
             })
+
             function datas() {
                 this.shareUrl = "http://www.kkguan.com";
                 this.shareImgurl = "http://www.kkguan.com/res/upload/image/source/bd/97/bd97e3348fd40a598f1943fa6475ee87.jpg";
