@@ -327,6 +327,9 @@
         function jsgoto() {
             var objData = new datas();
             var gotoData = objData.gotoData;
+            gotoData.goto_link = "kkapp://kk.app/openwith?name=gotoLogin&type=wxAuth&phone=15625537274";
+            gotoData.canBack = true;
+            gotoData.back_link = "https://www.kkguan.com";
             try {
                 cmbMerchantBridge.initSignNet(gotoData, "initSignNetGoto");
             } catch (ex) {
