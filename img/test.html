@@ -33,6 +33,7 @@
         <input type="button" id="enter" value="新浪微博" onclick="Share('sina');"/>
         <input type="button" id="enter" value="分享面板" onclick="Share('board');"/>
         <input type="button" id="enter" value="小程序" onclick="Share('wx_mini');"/>
+        <input type="button" id="enter" value="分享免费领" onclick="Share('freecollar');"/>
         </p>
         
         <p>
@@ -228,6 +229,10 @@
             } else if (type == "url") {
                 shareData.url = objData.shareUrl;
                 shareData.type = "pyq";
+            } else if (type == "freecollar"){
+                shareData.type = "board";
+                shareData.extra_type = "freecollar";
+                shareData.extra_data = "test";
             }
             try {
                 cmbMerchantBridge.initSignNet(shareData, "initSignNetShare");
@@ -361,6 +366,8 @@
                     userName: "gh_7c604a96550b",
                     path: "pages/home/index",
                     description: "",
+                    extra_type: "",
+                    extra_data: "",
                     thumbData: "http://www.kkguan.com/res/upload/image/source/bd/97/bd97e3348fd40a598f1943fa6475ee87.jpg"
                 };
                 this.shareInfo = {
