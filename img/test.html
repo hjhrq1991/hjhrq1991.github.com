@@ -101,8 +101,8 @@
         <p>
         <input type="button" id="enter" value="更改标题" onclick="initTitle('更改标题啦');"/>
         <input type="button" id="enter" value="体验店详情" onclick="store('1','体验店');"/>
-        <input type="button" id="enter" value="跳转登录(链接、可返回)" onclick="jsgoto(true);"/>
-        <input type="button" id="enter" value="跳转登录(链接、不可返回)" onclick="jsgoto(fasle);"/>
+        <input type="button" id="enter" value="跳转登录(链接、可返回)" onclick="jsgoto();"/>
+        <input type="button" id="enter" value="跳转登录(链接、不可返回)" onclick="jsgotoEnableBack();"/>
         </p>
         
         <p>
@@ -330,10 +330,20 @@
         }
 
         //跳转处理
-        function jsgoto(canback) {
+        function jsgoto() {
             var objData = new datas();
             var gotoData = objData.gotoData;
-            gotoData.canBack = canback;
+            gotoData.canBack = true;
+            try {
+                cmbMerchantBridge.initSignNet(gotoData, "initSignNetGoto");
+            } catch (ex) {
+            }
+        }
+          //跳转处理
+          function jsgotoEnableBack() {
+            var objData = new datas();
+            var gotoData = objData.gotoData;
+            gotoData.canBack = false;
             try {
                 cmbMerchantBridge.initSignNet(gotoData, "initSignNetGoto");
             } catch (ex) {
