@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>钉钉登录</title>
+    <style>
+#container{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+    </style>
+</head>
+<script src="https://g.alicdn.com/dingding/h5-dingtalk-login/0.21.0/ddlogin.js"></script>
+<body>
+<div id="container"></div>
+</body>
+
+<script>
+<!--var redirect_uri = encodeURIComponent('http://10.10.121.116/success.html?show=' + getQueryVariable("show"));-->
+
+function getQueryVariable(variable){
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable){return pair[1];}
+    }
+    return(false);
+}
+
+ var obj =  window.DTFrameLogin(
+        {
+            id: 'container',
+            width: 300,
+            height: 300,
+        },
+        {
+            redirect_uri:  getQueryVariable("redirect_uri"),
+            client_id: getQueryVariable("client_id"),
+            scope: getQueryVariable("scope"),
+            response_type: 'code',
+            state: 'STATE',
+            corpId: getQueryVariable("corpId"),
+            prompt: 'consent',
+        },
+        (loginResult) => {
+            const {redirectUrl, authCode, state} = loginResult;
+            // 这里可以直接进行重定向
+            window.location.href = redirectUrl;
+            // 也可以在不跳转页面的情况下，使用code进行授权
+            console.log(authCode);
+        },
+        (errorMsg) => {
+            // 这里一般需要展示登录失败的具体原因
+            alert(`Login Error: ${errorMsg}`);
+        },
+    );
+
+
+//设置自动执行
+//dom结构绘制完就触发，JQuery写法：$(document).ready(function(){  });
+document.addEventListener("DOMContentLoaded", () => {
+    setScale();
+});
+//页面渲染完才触发
+<!--window.onload = setScale;-->
+
+//设置横竖屏切换监听
+window.addEventListener("orientationchange",function(){
+console.log(window.orientation, 'window.orientation')
+    setScale()
+});
+
+function setScale() {
+    var platform = getQueryVariable("platform")
+    if(platform == "android"){
+        //android平台
+        var device = getQueryVariable("device")
+        if(device == "pda"){
+            setScaleForSmallAndroid()
+        } else {
+            setScaleForAndroid()
+        }
+    } else {
+        //iOS
+        setScaleForIOS()
+    }
+}
+
+//设置iOS设备横竖屏的缩放倍率
+function setScaleForIOS() {
+    var element = document.getElementById("container");
+    var scale = 1;
+    //横竖屏角度判断存在部分设备强制竖屏也用横屏显示，因此用屏幕宽高来判断
+    if (window.orientation == 0 || window.orientation == 180){
+        //竖屏
+        scale = 2;
+    } else {
+        //横屏 90 和 - 90
+        scale = 1.2;
+    }
+
+<!--    alert("width: " + window.screen.width + " , height: " + window.screen.height + " , window.orientation: " + window.orientation);-->
+    element.style.transform = "scale("+ scale +")";
+}
+
+//设置Android设备横竖屏的缩放倍率
+function setScaleForAndroid() {
+    var element = document.getElementById("container");
+    var scale = 1;
+    //横竖屏角度判断存在部分设备强制竖屏也用横屏显示，因此用屏幕宽高来判断
+    if (window.screen.width >= window.screen.height){
+        //横屏
+        scale = 1;
+    } else {
+        //竖屏
+        scale = 2;
+    }
+    element.style.transform = "scale("+ scale +")";
+}
+
+//设置Android PDA小屏设备横竖屏的缩放倍率
+function setScaleForSmallAndroid() {
+    var element = document.getElementById("container");
+    var scale = window.innerWidth * 1.0 / 250;
+    element.style.transform = "scale("+ scale +")";
+}
+</script>
+</html>
