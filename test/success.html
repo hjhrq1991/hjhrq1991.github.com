@@ -11,9 +11,9 @@
 
 <script>
 $(document).ready(function(){
-    var code = getQueryVariable("code")
+    var code = getQueryVariable("authCode")
     if(code == null || code == ""){
-        code = getQueryVariable("authCode")
+        code = getQueryVariable("code")
     }
     var show = getQueryVariable("show")
 
