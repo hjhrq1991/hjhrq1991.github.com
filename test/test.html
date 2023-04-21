@@ -1,0 +1,477 @@
+<html>
+<head>
+</head>
+<!--<script src="./jsbridge.js"></script>-->
+<body>
+<p>
+    <img id="imageview" width="20%"
+         src="https://himg.bdimg.com/sys/portrait/item/wise.1.4f944a65.wFLwraw3jCz_K55SnnyrBQ.jpg?time=2861"/>
+</p>
+<p>登录</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="登录"
+           onclick="login();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="唯一ID"
+           onclick="getUdid();"/>
+</p>
+
+<p></p>
+<p>获取资源</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="获取图片"
+           onclick="chooseFile('image', 'album', 0, 5, 'compressed');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="相机拍照"
+           onclick="chooseFile('image', 'camera', 0, 1, '');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="获取视频"
+           onclick="chooseFile('video', 'album', 10, 1, '');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="相机录像"
+           onclick="chooseFile('video', 'camera', 5, 1, '');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="获取文件"
+           onclick="chooseFile('file', 'album', 0, 1, '');"/>
+</p>
+<p>J分享</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="设置分享按钮"
+           onclick="setShareInfo();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="调用分享面板"
+           onclick="share('board');"/>
+</p>
+
+<p>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="微信好友"
+           onclick="share('wx');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="微信好友单图"
+           onclick="share('wx_ic');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="朋友圈分享"
+           onclick="share('pyq');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="朋友圈单图"
+           onclick="share('pyq_ic');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="qq好友"
+           onclick="share('qq');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="qq空间"
+           onclick="share('qqzone');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="新浪微博"
+           onclick="share('sina');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="小程序"
+           onclick="share('wx_mini');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="小程序"
+           onclick="share('dingtalk');"/>
+</p>
+
+<p></p>
+<p>其他</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="更改标题"
+           onclick="setTitle('更改标题啦');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="跳转链接"
+           onclick="gotoLink('https://www.kkgroup.cn');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="获取定位"
+           onclick="getLocation();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="扫一扫"
+           onclick="getScan();"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="扫描枪单次扫码"
+           onclick="scanner(false);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="扫描枪连续扫码"
+           onclick="scanner(true);"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="打开文档"
+           onclick="openDocument();"/>
+
+    <!--    <input type="button" style="width:20%;height:40px;font-size:25px" value="跳转PDF"-->
+    <!--           onclick="gotoLink('file:///android_asset/pdf.html?https://www.gjtool.cn/pdfh5/git.pdf');"/>-->
+</p>
+
+<p></p>
+<p>
+    <a style="width:20%;height:40px;font-size:45px" href="https://www.kkgroup.cn">跳转页面</a>
+</p>
+
+
+<p></p>
+<p>双屏异显</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="打开副屏"
+           onclick="openPresentation();"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="向副屏发消息"
+           onclick="presentationNotify();"/>
+
+    <!--    <input type="button" style="width:20%;height:40px;font-size:25px" value="向主屏发消息"-->
+    <!--           onclick="presentationNotify();"/>-->
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="关闭副屏"
+           onclick="closePresentation();"/>
+</p>
+<script>
+//设置自动执行
+//dom结构绘制完就触发，JQuery写法：$(document).ready(function(){  });
+<!--document.addEventListener("DOMContentLoaded", () => {-->
+<!--    scannerShortcuts(true, true);-->
+<!--});-->
+window.onload = scannerShortcuts(true, false);
+
+        function openPresentation() {
+            var data = new Presentation();
+            try {
+                bridge.callNative("openPresentation", data);
+            } catch (ex) {
+            }
+        }
+
+        function Presentation() {
+            this.type = 1;
+<!--            this.link = "https://www.bilibili.com/video/BV1Qa411U7Ck/?spm_id_from=333.337.search-card.all.click";-->
+            this.link = "file:///android_asset/test.html";
+        }
+
+        function presentationNotify() {
+            var data = new Presentation();
+            data.data = "1111";
+            try {
+                bridge.callNative("presentationNotify", data);
+            } catch (ex) {
+            }
+        }
+
+        function closePresentation() {
+            var data = new Document();
+            try {
+                bridge.callNative("closePresentation", data);
+            } catch (ex) {
+            }
+        }
+
+
+        /* 以下为具体调用 */
+        //调用分享
+        function share(type) {
+            var data = new ShareData();
+            data.type = type;
+            if (type == "pic") {
+                data.image = "https://cdn.t.kkguan.com/42/d9/42d990f9d44c33ef043eed78cf81d5b5.jpg?imageView2/0/interlace/1/q/80";
+                data.type = "pyq_ic";
+            } else if (type == "url") {
+                data.url = objData.shareUrl;
+                data.type = "pyq";
+            } else if (type == "freecollar") {
+                data.type = "board";
+                data.extraType = "freecollar";
+                data.extraData = "test";
+            }
+            try {
+                bridge.callNative("shareAppMessage", data);
+            } catch (ex) {
+            }
+        }
+
+        //设置分享信息
+        function setShareInfo() {
+            var data = new ShareData();
+            try {
+                bridge.callNative("setShareInfo", data);
+            } catch (ex) {
+            }
+        }
+
+        //设置标题
+        function setTitle(title) {
+            var data = new TitleData();
+            data.title = title;
+            try {
+                bridge.callNative("setNavigationBarTitle", data);
+            } catch (ex) {
+            }
+        }
+
+        //登录获取token
+        function login() {
+            try {
+                bridge.callNative("login", "");
+            } catch (ex) {
+            }
+        }
+
+        //获取udid
+        function getUdid() {
+            try {
+                bridge.callNative("getUDID", "");
+            } catch (ex) {
+            }
+        }
+
+        //获取定位
+        function getLocation() {
+            var data = new LocationData();
+            try {
+                bridge.callNative("getLocation", data);
+            } catch (ex) {
+            }
+        }
+
+        //获取扫码结果
+        function getScan() {
+          var data = new ScanData();
+            try {
+                bridge.callNative("scanCode", data);
+            } catch (ex) {
+            }
+        }
+
+        //调用扫描枪
+        function scanner(continuousScan) {
+            var data = new TitleData();
+            data.scanner = "idata";
+            data.continuousScan = continuousScan;
+            try {
+                bridge.callNative("scanner", data);
+            } catch (ex) {
+            }
+        }
+
+        //调用扫描枪快捷键
+        function scannerShortcuts(enable, scopeAll) {
+            var data = new TitleData();
+            data.scanner = "idata";
+            data.enable = enable;
+            data.scopeAll = scopeAll;
+            data.continuousScan = false;
+            try {
+                bridge.callNative("scannerShortcuts", data);
+            } catch (ex) {
+            }
+        }
+
+         //打开文档
+        function openDocument() {
+          var data = new Document();
+            try {
+                bridge.callNative("openDocument", data);
+            } catch (ex) {
+            }
+        }
+
+        //选择文件
+        function chooseFile(mediaType, sourceType, maxDuration, count, sizeType) {
+            var data = new ChooserData();
+
+            data.mediaType = mediaType;
+            data.sourceType = sourceType;
+            data.maxDuration = maxDuration;
+            data.count = count;
+            data.sizeType = sizeType;
+
+            try {
+                bridge.callNative("chooseMedia", data);
+            } catch (ex) {
+            }
+        }
+
+        //跳转处理
+        function gotoLink(link) {
+            var data = new LinkData();
+            data.gotoLink = link
+            data.canBack = true;
+            try {
+                bridge.callNative("navigateTo", data);
+            } catch (ex) {
+            }
+        }
+
+        /* 以下为测试数据 */
+
+        function ShareData() {
+            this.isAvailable = true;
+            this.type = "分享类型";
+            this.title = "share title";
+            this.content = "share content";
+            this.image = "https://cdn.t.kkguan.com/42/d9/42d990f9d44c33ef043eed78cf81d5b5.jpg?imageView2/0/interlace/1/q/80";
+            this.link = "http://hjhrq1991.info";
+            this.data = "base64图片数据";
+            this.userName = "gh_7c604a96550b";
+            this.path = "pages/home/index";
+            this.description = "小程序描述";
+            this.thumbData = "小程序封面url";
+            this.extraType = "扩展类型，用于标识extra_data";
+            this.extraData = "扩展数据，用于后台接口";
+        }
+
+        function TitleData() {
+            this.title = "";
+        }
+
+
+        function LinkData() {
+            this.gotoLink = "kkapp://kk.app/openwith?name=gotoLogin&type=wxAuth&phone=13790162768";
+            this.canBack = true;
+            this.backLink = "https://www.kkguan.com";
+        }
+
+        function LocationData() {
+            //wgs84、gcj02
+            this.type = "wgs84";
+        }
+
+        function ScanData() {
+            this.onlyFromCamera = true;
+            this.isMulti = false;
+            this.type = "code_bar";
+        }
+
+        function ScannerData() {
+            this.continuousScan = false;
+        }
+
+        function Document() {
+            this.filePath = "https://www.gjtool.cn/pdfh5/git.pdf";
+            this.fileType = "pdf";
+        }
+
+        function ChooserData() {
+            this.mediaType = "image";
+            this.sourceType = "album";
+            this.maxDuration = 60;
+            this.count = 1;
+        }
+
+
+        /* 以下为接受到native response 的处理 */
+
+        function getFileResponse(response){
+            //这里更新图片的显示
+            var data = response.data;
+            var tempFiles = data.tempFiles;
+            var tempFile = tempFiles[0]
+            setImage(tempFile.tempFilePath)
+        }
+
+        function setImage(src) {
+            var image = document.getElementById("imageview");
+            image.src = src;
+        }
+
+
+
+
+        <!--    以下JS桥部分     -->
+var requestData = {
+    nativeConfig: {},
+    nativeRequest: {}
+};
+
+var nativeConfig = {
+    nativeCallName: "",
+    requestId: "",
+    timeStamp: 0,
+    nativeCallType: "request"
+};
+
+/* 注册JS桥，默认桥名：WebViewJavascriptBridge */
+var kkGroupJSBridge = function (callback) {
+    try {
+        if (window.WebViewJavascriptBridge) {
+            callback(WebViewJavascriptBridge);
+        } else {
+            document.addEventListener("WebViewJavascriptBridgeReady", function () {
+                callback(WebViewJavascriptBridge);
+            }, false);
+        }
+    } catch (ex) {
+    }
+};
+
+/*
+ * JS 调用app native方法
+ *
+ * @param nativeCallName 请求的api方法
+ * @param data 数据实体
+ */
+var bridge = {
+    callNative: function (nativeCallName, data) {
+        nativeConfig.nativeCallName = nativeCallName;
+        nativeConfig.requestId = "请求Id";
+        nativeConfig.timeStamp = new Date().getTime();
+
+        requestData.nativeConfig = nativeConfig;
+
+        if (!data) {
+            //设置一个空实体
+            requestData.nativeRequest = {};
+        } else {
+    requestData.nativeRequest = data;
+}
+        kkGroupJSBridge(function (bridge) {
+            if (typeof bridge === "undefined") {
+                return;
+            }
+            bridge.callHandler("nativeRequest", JSON.stringify(requestData));
+        });
+    },
+};
+
+/* app native调用 JS 方法 */
+kkGroupJSBridge(function (bridge) {
+    bridge.init(function (message, responseCallback) {
+    });
+
+    /* 注册nativeResponse，app 通过 nativeResponse 应答 JS 调起的 nativeRequest api */
+    bridge.registerHandler("nativeResponse", function (data, responseCallback) {
+        var request = JSON.parse(data);
+        //请求头
+        var nativeConfig =  request.nativeConfig;
+        //请求参数
+        var requestData = request.nativeRequest
+        //app响应数据
+        var response = request.nativeResponse
+
+        //以获取登录信息为例
+        if ("login" == nativeConfig.nativeCallName){
+            showToast(JSON.stringify(response), 2000);
+        } else if ("chooseMedia" == nativeConfig.nativeCallName){
+            getFileResponse(request.nativeResponse)
+        } else {
+            showToast(data, 2000);
+        }
+        responseCallback("这里可以返回数据：" + data);
+    });
+
+    /* 注册nativeCall，app通过该方法主动调起相关api */
+    bridge.registerHandler("nativeCall", function (data, responseCallback) {
+
+        var request = JSON.parse(data);
+        //请求头
+        var nativeConfig =  request.nativeConfig;
+        //app数据
+        var nativeData = request.nativeDataResponse
+
+        //以获取快捷扫描结果为例，
+        if ("scannerResult" == nativeConfig.appCallName){
+            showToast(JSON.stringify(nativeData), 2000);
+        } else if("presentationNotify" == nativeConfig.appCallName){
+            showToast("接收到了数据", 2000);
+        } else {
+            showToast(data, 2000);
+        }
+        responseCallback("这里可以返回数据");
+    });
+});
+
+/* 显示一个toast */
+function showToast(msg,duration){
+    duration=isNaN(duration)?3000:duration;
+    var m = document.createElement('div');
+    m.innerHTML = msg;
+    m.style.cssText="max-width:60%;min-width: 150px;padding:0 14px;max-height:60%;min-height: 40px;color: rgb(255, 255, 255);line-height: 40px;text-align: center;border-radius: 4px;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index: 9999999999;background: rgba(0, 0, 0,.7);font-size: 30px;";
+    document.body.appendChild(m);
+    setTimeout(function() {
+        var d = 0.5;
+        m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
+        m.style.opacity = '0';
+        setTimeout(function() { document.body.removeChild(m) }, d * 1000);
+    }, duration);
+}
+
+
+
+
+
+
+</script>
+</body>
+
+</html>
