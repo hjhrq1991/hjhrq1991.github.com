@@ -7,6 +7,11 @@
     <img id="imageview" width="20%"
          src="https://himg.bdimg.com/sys/portrait/item/wise.1.4f944a65.wFLwraw3jCz_K55SnnyrBQ.jpg?time=2861"/>
 </p>
+<p></p>
+<p>
+    <a style="width:20%;height:40px;font-size:24px" href="https://www.kkgroup.cn">跳转页面</a>
+</p>
+
 <p>登录</br>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="登录"
            onclick="login();"/>
@@ -66,11 +71,6 @@
     <input type="button" style="width:20%;height:40px;font-size:25px" value="扫一扫"
            onclick="getScan();"/>
 
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="扫描枪单次扫码"
-           onclick="scanner(false);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="扫描枪连续扫码"
-           onclick="scanner(true);"/>
-
     <input type="button" style="width:20%;height:40px;font-size:25px" value="打开文档"
            onclick="openDocument();"/>
 
@@ -78,11 +78,39 @@
     <!--           onclick="gotoLink('file:///android_asset/pdf.html?https://www.gjtool.cn/pdfh5/git.pdf');"/>-->
 </p>
 
-<p></p>
+<p>扫描头</p>
 <p>
-    <a style="width:20%;height:40px;font-size:45px" href="https://www.kkgroup.cn">跳转页面</a>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="扫描枪单次扫码"
+           onclick="scanner(false);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="扫描枪连续扫码"
+           onclick="scanner(true);"/>
 </p>
 
+<p>钱箱</p>
+<p>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米自动"
+           onclick="openCashDrawer();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米内置"
+           onclick="openCashDrawer('sunmi_buildin');"/>
+
+    <input type="button" style="width:30%;height:40px;font-size:25px" value="商米内置指令十六进制"
+           onclick="openCashDrawer('sunmi_buildin','', ['10','14','00','00','00'], true);"/>
+
+    <input type="button" style="width:30%;height:40px;font-size:25px" value="商米内置指令十进制"
+           onclick="openCashDrawer('sunmi_buildin','', ['16','20','00','00','00'], false);"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米蓝牙"
+           onclick="openCashDrawer('sunmi_bt', '0C:25:76:66:0B:17');"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米USB驱动器"
+           onclick="openCashDrawer('sunmi_drive_usb');"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米蓝牙驱动器"
+           onclick="openCashDrawer('sunmi_drive_bt');"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="蓝牙驱动器列表"
+           onclick="getBleCashDrawerDriver();"/>
+</p>
 
 <p></p>
 <p>双屏异显</br>
@@ -99,13 +127,59 @@
            onclick="closePresentation();"/>
 </p>
 
-<p>蓝牙打印</br>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米58打印"
-           onclick="btPrinter(1, 'file:///android_asset/printer.html', '', false);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米静默打印"
-           onclick="btPrinter(1, 'file:///android_asset/printer.html', '', true);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="html内容打印"
-           onclick="btPrinter(1, '', '', false);"/>
+<p>获取商米打印机列表</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="普通获取"
+           onclick="getPrinters(false);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="静默获取"
+           onclick="getPrinters(true);"/>
+</p>
+
+<p>商米蓝牙打印</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="url打印"
+           onclick="printer(1, 'file:///android_asset/printer.html', '', false, '');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="url静默打印"
+           onclick="printer(1, 'file:///android_asset/printer.html', '', true, '');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="html文本打印"
+           onclick="printer(1, '', '', false, '');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="指定打印机"
+           onclick="printer(1, 'file:///android_asset/printer.html', '', false, '0C:25:76:66:0B:17');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="长图"
+           onclick="printer(1, 'file:///android_asset/printerlong.html', '', false, '0C:25:76:66:0B:17');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="超长图"
+           onclick="printer(1, 'file:///android_asset/printeroverlong.html', '', false, '0C:25:76:66:0B:17');"/>
+</p>
+
+<p>商米内置打印</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="url打印"
+           onclick="printer(2, 'file:///android_asset/printer.html', '', false, '');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="url静默打印"
+           onclick="printer(2, 'file:///android_asset/printer.html', '', true, '');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="html文本打印"
+           onclick="printer(2, '', '', false, '');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="长图"
+           onclick="printer(2, 'file:///android_asset/printerlong.html', '', false, '');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="超长图"
+           onclick="printer(2, 'file:///android_asset/printeroverlong.html', '', false, '');"/>
+</p>
+
+<p>商米外置扫描设备</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="开启条码"
+           onclick="extScanner(true, 'text');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="开启支付码"
+           onclick="extScanner(true, 'pay');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="关闭扫描"
+           onclick="extScanner(false);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="任意键连续"
+           onclick="extScanner(true, 'text', true, -1);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="Enter键连续"
+           onclick="extScanner(true, 'text', true, 0);"/>
+</p>
+
+<p></p>
+<p></p>
+<p>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="快捷关闭"
+           onclick="closeProgram();"/>
 </p>
 <script>
 //设置自动执行
@@ -115,8 +189,31 @@
 <!--});-->
 window.onload = scannerShortcuts(true, false);
 
-        function btPrinter(type, link, content, isTransparent) {
+        function extScanner(enable, type, continuousScan, endKey) {
+          var data = new ScanData();
+          data.enable = enable;
+          data.type = type;
+          data.continuousScan = continuousScan;
+          data.endKey = endKey;
+            try {
+                bridge.callNative("extScanner", data);
+            } catch (ex) {
+            }
+        }
+
+        function getPrinters(isTransparent) {
             var data = new Presentation();
+            data.isDebug = true;
+            data.isTransparent = isTransparent
+            try {
+                bridge.callNative("getPrinters", data);
+            } catch (ex) {
+            }
+        }
+
+        function printer(type, link, content, isTransparent, macAddress) {
+            var data = new Presentation();
+            data.macAddress = macAddress
             data.type = type;
             data.link = link;
             data.content = content;
@@ -202,6 +299,14 @@ window.onload = scannerShortcuts(true, false);
             }
         }
 
+        function closeProgram() {
+            var data = new Presentation();
+            try {
+                bridge.callNative("closeProgram", data);
+            } catch (ex) {
+            }
+        }
+
         //登录获取token
         function login() {
             try {
@@ -239,10 +344,31 @@ window.onload = scannerShortcuts(true, false);
         //调用扫描枪
         function scanner(continuousScan) {
             var data = new TitleData();
-            data.scanner = "idata";
+            data.scanner = "";
             data.continuousScan = continuousScan;
             try {
                 bridge.callNative("scanner", data);
+            } catch (ex) {
+            }
+        }
+
+        //调用钱箱
+        function openCashDrawer(cashDrawer, macAddress, instruction, isHex) {
+            var data = new TitleData();
+            data.cashDrawer = cashDrawer;
+            data.macAddress = macAddress;
+            data.instruction = instruction;
+            data.isHex = isHex;
+            try {
+                bridge.callNative("openCashDrawer", data);
+            } catch (ex) {
+            }
+        }
+
+        function getBleCashDrawerDriver() {
+            var data = new TitleData();
+            try {
+                bridge.callNative("getBleCashDrawerDriver", data);
             } catch (ex) {
             }
         }
@@ -467,6 +593,8 @@ kkGroupJSBridge(function (bridge) {
             showToast(JSON.stringify(nativeData), 2000);
         } else if("presentationNotify" == nativeConfig.appCallName){
             showToast("接收到了数据", 2000);
+        }  else if("extScannerResult" == nativeConfig.appCallName){
+            showToast(JSON.stringify(nativeData), 2000);
         } else {
             showToast(data, 2000);
         }
