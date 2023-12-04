@@ -12,11 +12,28 @@
     <a style="width:20%;height:40px;font-size:24px" href="https://www.kkgroup.cn">跳转页面</a>
 </p>
 
-<p>登录</br>
+<p>基础功能</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="快捷关闭"
+           onclick="closeProgram();"/>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="登录"
            onclick="login();"/>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="唯一ID"
            onclick="getUdid();"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="更改标题"
+           onclick="setTitle('更改标题啦');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="跳转链接"
+           onclick="gotoLink('https://www.kkgroup.cn');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="获取定位"
+           onclick="getLocation();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="扫一扫"
+           onclick="getScan();"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="打开文档"
+           onclick="openDocument();"/>
+
+    <!--    <input type="button" style="width:20%;height:40px;font-size:25px" value="跳转PDF"-->
+    <!--           onclick="gotoLink('file:///android_asset/pdf.html?https://www.gjtool.cn/pdfh5/git.pdf');"/>-->
 </p>
 
 <p></p>
@@ -32,7 +49,7 @@
     <input type="button" style="width:20%;height:40px;font-size:25px" value="获取文件"
            onclick="chooseFile('file', 'album', 0, 1, '');"/>
 </p>
-<p>J分享</br>
+<p>分享</br>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="设置分享按钮"
            onclick="setShareInfo();"/>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="调用分享面板"
@@ -60,56 +77,12 @@
            onclick="share('dingtalk');"/>
 </p>
 
-<p></p>
-<p>其他</br>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="更改标题"
-           onclick="setTitle('更改标题啦');"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="跳转链接"
-           onclick="gotoLink('https://www.kkgroup.cn');"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="获取定位"
-           onclick="getLocation();"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="扫一扫"
-           onclick="getScan();"/>
-
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="打开文档"
-           onclick="openDocument();"/>
-
-    <!--    <input type="button" style="width:20%;height:40px;font-size:25px" value="跳转PDF"-->
-    <!--           onclick="gotoLink('file:///android_asset/pdf.html?https://www.gjtool.cn/pdfh5/git.pdf');"/>-->
-</p>
-
-<p>扫描头</p>
+<p>内置扫描</p>
 <p>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="扫描枪单次扫码"
            onclick="scanner(false);"/>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="扫描枪连续扫码"
            onclick="scanner(true);"/>
-</p>
-
-<p>钱箱</p>
-<p>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米自动"
-           onclick="openCashDrawer();"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米内置"
-           onclick="openCashDrawer('sunmi_buildin');"/>
-
-    <input type="button" style="width:30%;height:40px;font-size:25px" value="商米内置指令十六进制"
-           onclick="openCashDrawer('sunmi_buildin','', ['10','14','00','00','00'], true);"/>
-
-    <input type="button" style="width:30%;height:40px;font-size:25px" value="商米内置指令十进制"
-           onclick="openCashDrawer('sunmi_buildin','', ['16','20','00','00','00'], false);"/>
-
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米蓝牙"
-           onclick="openCashDrawer('sunmi_bt', '0C:25:76:66:0B:17');"/>
-
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米USB驱动器"
-           onclick="openCashDrawer('sunmi_drive_usb');"/>
-
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米蓝牙驱动器"
-           onclick="openCashDrawer('sunmi_drive_bt');"/>
-
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="蓝牙驱动器列表"
-           onclick="getBleCashDrawerDriver();"/>
 </p>
 
 <p></p>
@@ -162,6 +135,32 @@
            onclick="printer(2, 'file:///android_asset/printeroverlong.html', '', false, '');"/>
 </p>
 
+<p>钱箱</p>
+<p>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米自动"
+           onclick="openCashDrawer();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米内置"
+           onclick="openCashDrawer('sunmi_buildin');"/>
+
+    <input type="button" style="width:30%;height:40px;font-size:25px" value="商米内置指令十六进制"
+           onclick="openCashDrawer('sunmi_buildin','', ['10','14','00','00','00'], true);"/>
+
+    <input type="button" style="width:30%;height:40px;font-size:25px" value="商米内置指令十进制"
+           onclick="openCashDrawer('sunmi_buildin','', ['16','20','00','00','00'], false);"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米蓝牙"
+           onclick="openCashDrawer('sunmi_bt', '0C:25:76:66:0B:17');"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米USB驱动器"
+           onclick="openCashDrawer('sunmi_drive_usb');"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米蓝牙驱动器"
+           onclick="openCashDrawer('sunmi_drive_bt');"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="蓝牙驱动器列表"
+           onclick="getBleCashDrawerDriver();"/>
+</p>
+
 <p>商米外置扫描设备</br>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="开启条码"
            onclick="extScanner(true, 'text');"/>
@@ -175,11 +174,20 @@
            onclick="extScanner(true, 'text', true, 0);"/>
 </p>
 
-<p></p>
+<p>外置键盘</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="不拦截响应"
+           onclick="extKeyboard(true, 0);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="拦截响应"
+           onclick="extKeyboard(true, 1);"/>
+</p>
+
 <p></p>
 <p>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="快捷关闭"
-           onclick="closeProgram();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="测试多个响应"
+          onclick="test123();"/>
+</p>
+<p>
+
 </p>
 <script>
 //设置自动执行
@@ -189,12 +197,28 @@
 <!--});-->
 window.onload = scannerShortcuts(true, false);
 
+        function test123() {
+            printer(2, 'file:///android_asset/printer.html', '', true, '');
+            openCashDrawer();
+            extKeyboard(true, 0);
+        }
+
+        function extKeyboard(enable, mode) {
+            var data = new ScanData();
+            data.enable = enable;
+            data.mode = mode;
+            try {
+                bridge.callNative("extKeyboard", data);
+            } catch (ex) {
+            }
+        }
+
         function extScanner(enable, type, continuousScan, endKey) {
-          var data = new ScanData();
-          data.enable = enable;
-          data.type = type;
-          data.continuousScan = continuousScan;
-          data.endKey = endKey;
+            var data = new ScanData();
+            data.enable = enable;
+            data.type = type;
+            data.continuousScan = continuousScan;
+            data.endKey = endKey;
             try {
                 bridge.callNative("extScanner", data);
             } catch (ex) {
@@ -589,11 +613,13 @@ kkGroupJSBridge(function (bridge) {
         var nativeData = request.nativeDataResponse
 
         //以获取快捷扫描结果为例，
-        if ("scannerResult" == nativeConfig.appCallName){
+        if ("scannerResult" == nativeConfig.appCallName) {
             showToast(JSON.stringify(nativeData), 2000);
-        } else if("presentationNotify" == nativeConfig.appCallName){
+        } else if("extKeyboardResult" == nativeConfig.appCallName) {
+            showToast(JSON.stringify(nativeData), 2000);
+        } else if("presentationNotify" == nativeConfig.appCallName) {
             showToast("接收到了数据", 2000);
-        }  else if("extScannerResult" == nativeConfig.appCallName){
+        }  else if("extScannerResult" == nativeConfig.appCallName) {
             showToast(JSON.stringify(nativeData), 2000);
         } else {
             showToast(data, 2000);
