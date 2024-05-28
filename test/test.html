@@ -225,18 +225,20 @@
 <!--});-->
 window.onload = scannerShortcuts(true, false);
 
+        //组织邀请
         function activation() {
             var register_code = document.getElementById("register_code").value;
             var staff_id = document.getElementById("staff_id").value;
-            window.location.href = "teamshare://ts.app/openwith?name=Activation&register_code=" + register_code + "&staff_id=" + staff_id;
+            labelURL("teamshare://ts.app/openwith?name=Activation&register_code=" + register_code + "&staff_id=" + staff_id);
         }
 
+        私有部署
         function privateInput() {
             var code = document.getElementById("private_input").value;
-            window.location.href = "teamshare://ts.app/openwith?name=PrivateDeployments&code=" + code;
-<!--            window.location.replace("teamshare://ts.app/openwith?name=PrivateDeployments&code=" + code);-->
+            labelURL("teamshare://ts.app/openwith?name=PrivateDeployments&code=" + code);
         }
 
+        //刷新
         function setRefresh(enable) {
             var data = new ScanData();
             data.enable = enable;
@@ -253,6 +255,7 @@ window.onload = scannerShortcuts(true, false);
             extKeyboard(true, 0);
         }
 
+        //键盘适配
         function keyboardAdjust(enable) {
             var data = new ScanData();
             data.enable = enable;
@@ -262,6 +265,7 @@ window.onload = scannerShortcuts(true, false);
             }
         }
 
+        //外置键盘
         function extKeyboard(enable, mode) {
             var data = new ScanData();
             data.enable = enable;
@@ -272,6 +276,7 @@ window.onload = scannerShortcuts(true, false);
             }
         }
 
+        //外置扫描枪
         function extScanner(enable, type, continuousScan, endKey) {
             var data = new ScanData();
             data.enable = enable;
@@ -284,6 +289,7 @@ window.onload = scannerShortcuts(true, false);
             }
         }
 
+        //获取打印机
         function getPrinters(isTransparent) {
             var data = new Presentation();
             data.isDebug = true;
@@ -294,6 +300,7 @@ window.onload = scannerShortcuts(true, false);
             }
         }
 
+        //打印机
         function printer(type, link, content, isTransparent, macAddress, dividingLine) {
             var data = new Presentation();
             data.macAddress = macAddress
@@ -310,6 +317,7 @@ window.onload = scannerShortcuts(true, false);
             }
         }
 
+        //打开副屏
         function openPresentation() {
             var data = new Presentation();
             try {
@@ -318,12 +326,14 @@ window.onload = scannerShortcuts(true, false);
             }
         }
 
+        //副屏实体
         function Presentation() {
             this.type = 1;
 <!--            this.link = "https://www.bilibili.com/video/BV1Qa411U7Ck/?spm_id_from=333.337.search-card.all.click";-->
             this.link = "https://blog.hjhrq1991.top/test/test.html";
         }
 
+        //通知副屏
         function presentationNotify() {
             var data = new Presentation();
             data.data = "1111";
@@ -333,6 +343,7 @@ window.onload = scannerShortcuts(true, false);
             }
         }
 
+        //关闭副屏
         function closePresentation() {
             var data = new Document();
             try {
@@ -383,6 +394,7 @@ window.onload = scannerShortcuts(true, false);
             }
         }
 
+        //关闭程序
         function closeProgram() {
             var data = new Presentation();
             try {
@@ -449,6 +461,7 @@ window.onload = scannerShortcuts(true, false);
             }
         }
 
+        //获取蓝牙钱箱驱动器
         function getBleCashDrawerDriver() {
             var data = new TitleData();
             try {
@@ -704,7 +717,14 @@ function showToast(msg,duration){
     }, duration);
 }
 
-
+        //重定向
+        function redirectURL(url) {
+            window.location.replace(url);
+        }
+        //A标签跳转
+        function labelURL(url) {
+            window.location.href = url;
+        }
 
 
 
