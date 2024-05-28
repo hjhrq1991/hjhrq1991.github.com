@@ -14,6 +14,9 @@
 <p>
     <a style="width:20%;height:40px;font-size:24px" href="teamshare://ts.app/openwith?name=Activation&register_code=oCBJn2&staff_id=557212189193768960">跳转指定scheme链接</a>
     </br>
+    <input type="text" style="width:20%;height:40px;font-size:25px" id="private_input"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="私有部署跳转"
+           onclick="privateInput();"/>
     <a style="width:20%;height:40px;font-size:24px" href="teamshare://ts.app/openwith?name=PrivateDeployments&code=360055">私有部署</a>
 </p>
 
@@ -222,6 +225,11 @@
 <!--});-->
 window.onload = scannerShortcuts(true, false);
 
+        function privateInput() {
+            var code = document.getElementById("private_input").value;
+            window.location.href = "teamshare://ts.app/openwith?name=PrivateDeployments&code=" + code;
+<!--            window.location.replace("teamshare://ts.app/openwith?name=PrivateDeployments&code=" + code);-->
+        }
 
         function setRefresh(enable) {
             var data = new ScanData();
