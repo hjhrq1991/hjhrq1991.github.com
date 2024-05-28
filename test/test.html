@@ -12,12 +12,12 @@
     <a style="width:20%;height:40px;font-size:24px" href="https://www.kkgroup.cn">跳转页面</a>
 </p>
 <p>
-    <a style="width:20%;height:40px;font-size:24px" href="teamshare://ts.app/openwith?name=Activation&register_code=oCBJn2&staff_id=557212189193768960">跳转指定scheme链接</a>
+    <input type="text" style="width:40%;height:40px;font-size:25px" id="register_code" placeholder="register_code" value="oCBJn2"/>
+    <input type="text" style="width:40%;height:40px;font-size:25px" id="staff_id" placeholder="staff_id" value="557212189193768960"/>
+    <input type="button" style="width:40%;height:40px;font-size:25px" value="组织邀请跳转" onclick="activation();"/>
     </br>
-    <input type="text" style="width:20%;height:40px;font-size:25px" id="private_input"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="私有部署跳转"
-           onclick="privateInput();"/>
-    <a style="width:20%;height:40px;font-size:24px" href="teamshare://ts.app/openwith?name=PrivateDeployments&code=360055">私有部署</a>
+    <input type="text" style="width:20%;height:40px;font-size:25px" id="private_input" placeholder="私有部署code"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="私有部署跳转" onclick="privateInput();"/>
 </p>
 
 <p>基础功能</br>
@@ -224,6 +224,12 @@
 <!--    scannerShortcuts(true, true);-->
 <!--});-->
 window.onload = scannerShortcuts(true, false);
+
+        function activation() {
+            var register_code = document.getElementById("register_code").value;
+            var staff_id = document.getElementById("staff_id").value;
+            window.location.href = "teamshare://ts.app/openwith?name=Activation&register_code=" + register_code + "&staff_id=" + staff_id;
+        }
 
         function privateInput() {
             var code = document.getElementById("private_input").value;
