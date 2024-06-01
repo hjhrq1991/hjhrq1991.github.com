@@ -196,12 +196,12 @@
 </p>
 
 <p>商米报警灯</br>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="全部亮" onclick="setStatusLamp(1, 0, 0, 0, 0);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="全部灭" onclick="setStatusLamp(0, 0, 0, 0, 0);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="2号亮" onclick="setStatusLamp(1, 2, 0, 0, 0);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="2号灭" onclick="setStatusLamp(1, 2, 1, 0, 0);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="4号循环开始" onclick="setStatusLamp(2, 4, 0, 300, 300);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="4号魂环停止" onclick="setStatusLamp(2, 4, 1, 300, 300);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="全部亮" onclick="setStateLamp(1, 0, 0, 0, 0);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="全部灭" onclick="setStateLamp(0, 0, 0, 0, 0);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="2号亮" onclick="setStateLamp(1, 2, 0, 0, 0);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="2号灭" onclick="setStateLamp(1, 2, 1, 0, 0);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="4号循环开始" onclick="setStateLamp(2, 4, 0, 300, 300);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="4号魂环停止" onclick="setStateLamp(2, 4, 1, 300, 300);"/>
 </p>
 
 <p>外置键盘</br>
@@ -329,7 +329,7 @@ window.onload = scannerShortcuts(true, false);
         }
 
         //刷新
-        function setStatusLamp(command, lamp, status, lightTime, offTime) {
+        function setStateLamp(command, lamp, status, lightTime, offTime) {
             var data = new LinkData();
             data.command = command;
             data.lamp = lamp;
@@ -337,7 +337,7 @@ window.onload = scannerShortcuts(true, false);
             data.lightTime = lightTime;
             data.offTime = offTime;
             try {
-                bridge.callNative("setStatusLamp", data);
+                bridge.callNative("setStateLamp", data);
             } catch (ex) {
             }
         }
