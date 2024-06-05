@@ -15,6 +15,7 @@ function returnAuthCode(type, auth) {
         var data = new AuthCode();
         data.type = type
         data.auth = auth
+        showToast(JSON.stringify(data), 2000);
         bridge.callNative("thirdPartyLogin", data);
     } catch (ex) {
     }
