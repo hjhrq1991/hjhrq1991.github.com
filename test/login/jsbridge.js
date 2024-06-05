@@ -10,11 +10,19 @@ function getQueryVariable(variable){
 
 <!--    以下JS桥部分     -->
 //钉钉临时授权码
-function setDingTalkAuth(auth) {
+function returnAuthCode(type, auth) {
     try {
-        bridge.callNative("setDingTalkAuth", auth);
+        var data = new AuthCode();
+        data.type = type
+        data.auth = auth
+        bridge.callNative("thirdPartyLogin", data);
     } catch (ex) {
     }
+}
+
+function AuthCode() {
+    this.type = "";
+    this.auth = "";
 }
 
 var requestData = {
@@ -83,16 +91,10 @@ bridge.registerHandler("nativeResponse", function (data, responseCallback) {
     /* 这里执行相关处理 */
     var request = JSON.parse(data);
     var nativeConfig =  request.nativeConfig;
-
-    if ("chooseMedia" == nativeConfig.nativeCallName){
-        //示例
-<!--        responseCallback("这里可以返回数据：" + data);-->
-    }
 });
 
 bridge.registerHandler("nativeCall", function (data, responseCallback) {
-<!--    showToast(data, 2000);-->
-<!--    responseCallback("这里可以返回数据");-->
+
     });
 });
 

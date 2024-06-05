@@ -12,6 +12,12 @@
 
 <script>
 $(document).ready(function(){
+    //登录类型
+    var type = getQueryVariable("type")
+    if(type == null || type == ""){
+        type = "DingTalk"
+    }
+    //授权码
     var code = getQueryVariable("authCode")
     if(code == null || code == ""){
         code = getQueryVariable("code")
@@ -22,7 +28,8 @@ $(document).ready(function(){
     if(show == "true"){
         $("#show").html("成功！！！ 获取code：" + code)
     }
-    setDingTalkAuth(code);
+
+    returnAuthCode(type, code);
 });
 </script>
 </html>
