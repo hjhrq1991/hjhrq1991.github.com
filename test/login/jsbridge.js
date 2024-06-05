@@ -92,9 +92,6 @@ bridge.registerHandler("nativeResponse", function (data, responseCallback) {
     /* 这里执行相关处理 */
     var request = JSON.parse(data);
     var nativeConfig =  request.nativeConfig;
-
-    console.log("hrq=====js回调", JSON.stringify(response));
-
 });
 
 bridge.registerHandler("nativeCall", function (data, responseCallback) {
