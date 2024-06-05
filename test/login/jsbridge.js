@@ -10,12 +10,12 @@ function getQueryVariable(variable){
 
 <!--    以下JS桥部分     -->
 //钉钉临时授权码
-function returnAuthCode(type, auth) {
+function returnAuthCode(type, auth, url) {
     try {
         var data = new AuthCode();
         data.type = type
         data.auth = auth
-
+        data.url = url
         bridge.callNative("thirdPartyLogin", data);
     } catch (ex) {
     }
@@ -24,6 +24,7 @@ function returnAuthCode(type, auth) {
 function AuthCode() {
     this.type = "";
     this.auth = "";
+    this.url = "";
 }
 
 var requestData = {
