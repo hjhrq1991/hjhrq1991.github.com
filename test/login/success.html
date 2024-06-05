@@ -24,7 +24,8 @@ $(document).ready(function(){
     }
     var show = getQueryVariable("show")
 
-    console.log("hrq=====钉钉临时授权码", code);
+    console.log("hrq=====类型", type);
+    console.log("hrq=====授权码", code);
     if(show == "true"){
         $("#show").html("成功！！！ 获取code：" + code)
     }
