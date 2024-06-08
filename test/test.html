@@ -24,6 +24,8 @@
 <p>基础功能</br>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="快捷关闭"
            onclick="closeProgram();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="环境信息"
+           onclick="getAppEnv();"/>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="登录"
            onclick="login();"/>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="唯一ID"
@@ -50,6 +52,18 @@
     <!--    <input type="button" style="width:20%;height:40px;font-size:25px" value="跳转PDF"-->
     <!--           onclick="gotoLink('file:///android_asset/pdf.html?https://www.gjtool.cn/pdfh5/git.pdf');"/>-->
 </p>
+
+<p>Teamshare OS</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="获取组织"
+           onclick="getOrganizations();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="切换组织"
+           onclick="changeOrganization();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="获取语言"
+           onclick="getLanguages();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="切换语言"
+           onclick="changeLanguage();"/>
+</p>
+
 
 <p></p>
 <p>获取资源</br>
@@ -248,6 +262,61 @@ window.onload = scannerShortcuts(true, false);
             labelURL("teamshare://ts.app/openwith?name=PrivateDeployments&code=" + code);
         }
 
+        //获取环境
+        function getAppEnv() {
+            try {
+                bridge.callNative("getEnv", null);
+            } catch (ex) {
+            }
+        }
+
+        //天书文件下载
+        function gotoTeamShareFileDownload() {
+            var data = new ScanData();
+            data.enable = enable;
+            try {
+                bridge.callNative("TeamShareFileDownload", data);
+            } catch (ex) {
+            }
+        }
+
+        //获取组织
+        function getOrganizations() {
+            try {
+                bridge.callNative("getOrganizations", null);
+            } catch (ex) {
+            }
+        }
+
+        //切换组织
+        function changeOrganization() {
+            var data = new ScanData();
+            data.code = "000";
+            try {
+                bridge.callNative("changeOrganization", data);
+            } catch (ex) {
+            }
+        }
+
+        //获取语言
+        function getLanguages(enable) {
+            try {
+                bridge.callNative("getLanguages", null);
+            } catch (ex) {
+            }
+        }
+
+        //切换语言
+        function changeLanguage(enable) {
+            var data = new ScanData();
+            data.key = "enUS";
+            data.label = "English";
+            data.label2 = "英语";
+            try {
+                bridge.callNative("changeLanguage", data);
+            } catch (ex) {
+            }
+        }
 
         //刷新
         function setRefresh(enable) {
