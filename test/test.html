@@ -3,18 +3,10 @@
 </head>
 <!--<script src="./jsbridge.js"></script>-->
 <body>
-<p>
-    <img id="imageview" width="20%"
-         src="https://himg.bdimg.com/sys/portrait/item/wise.1.4f944a65.wFLwraw3jCz_K55SnnyrBQ.jpg?time=2861"/>
-</p>
 <p></p>
 <p>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="A标签跳转" onclick="labelURL('https://www.kkgroup.cn');"/>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="重定向跳转" onclick="redirectURL('https://www.kkgroup.cn');"/>
-    </br></br>
-    <input type="text" style="width:30%;height:40px;font-size:25px" id="common_link" placeholder="test://ts.app/openwith?name=" value="test://ts.app/openwith?name="/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="自定义链接" onclick="commonLink();"/>
-
 </p>
 <p>
     <input type="text" style="width:30%;height:40px;font-size:25px" id="register_code" placeholder="register_code" value="oCBJn2"/>
@@ -82,20 +74,32 @@
     <input type="button" style="width:20%;height:40px;font-size:25px" value="切换语言"
            onclick="changeLanguage();"/>
 </p>
-
-
 <p></p>
-<p>获取资源</br>
+<p>
+    <img id="imageview" width="20%" src="https://himg.bdimg.com/sys/portrait/item/wise.1.4f944a65.wFLwraw3jCz_K55SnnyrBQ.jpg?time=2861"/>
+    <video id="videoview" width="20%" controls/>
+</p>
+
+<p></p>获取资源</br>
+<p></p>浏览器方式获取图片</br>
+    <input name="获取图片" style="height:40px;font-size:25px" type="file" id="getImage" accept="image/*" onchange="handleFileSelect(event)"/>
+    <input name="相机拍照" style="height:40px;font-size:25px" type="file" id="takePhoto" accept="image/*" capture="environment" onchange="handleFileSelect(event)"/>
+<p></p>浏览器方式获取视频</br>
+    <input name="获取视频" style="height:40px;font-size:25px" type="file" id="getVideo" accept="video/*" onchange="handleFileSelect(event)"/>
+    <input name="相机录像" style="height:40px;font-size:25px" type="file" id="takeVideo" accept="video/*" capture="environment" onchange="handleFileSelect(event)"/>
+<p></p>浏览器方式获取文件</br>
+    <input name="获取文件" style="height:40px;font-size:25px" type="file" id="getFile" accept="*/*" onchange="handleFileSelect(event)"/>
+<p>JSSDK方式获取</br>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="获取图片"
            onclick="chooseFile('image', 'album', 0, 5, 'compressed');"/>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="相机拍照"
-           onclick="chooseFile('image', 'camera', 0, 1, '');"/>
+           onclick="chooseFile('image', 'camera', 0, 1, 'original');"/>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="获取视频"
-           onclick="chooseFile('video', 'album', 10, 1, '');"/>
+           onclick="chooseFile('video', 'album', 10, 1, 'original');"/>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="相机录像"
-           onclick="chooseFile('video', 'camera', 5, 1, '');"/>
+           onclick="chooseFile('video', 'camera', 5, 1, 'original');"/>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="获取文件"
-           onclick="chooseFile('file', 'album', 0, 1, '');"/>
+           onclick="chooseFile('file', 'album', 0, 1, 'original');"/>
 </p>
 <p>分享</br>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="设置分享按钮"
@@ -135,11 +139,8 @@
 
 <p></p>
 <p>双屏异显</br>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="打开全局副屏"
-           onclick="openPresentation('file:///android_asset/Presentation.html', 0);"/>
-
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="打开当前副屏"
-           onclick="openPresentation('https://blog.hjhrq1991.top/test/test.html', 1);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="打开副屏"
+           onclick="openPresentation();"/>
 
     <input type="button" style="width:20%;height:40px;font-size:25px" value="向副屏发消息"
            onclick="presentationNotify();"/>
@@ -177,7 +178,7 @@
            onclick="printer(2, 'file:///android_asset/OverLongReceipt.html', '', false, '');"/>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="静默超长图"
            onclick="printer(2, 'file:///android_asset/OverLongReceipt.html', '', true, '');"/>
-    <!--    type, link, content, isTransparent, macAddress, dividingLine, isStandard, compressQuality-->
+<!--    type, link, content, isTransparent, macAddress, dividingLine, isStandard, compressQuality-->
 </p>
 <p>商米蓝牙打印</br>
     <input type="button" style="width:20%;height:40px;font-size:25px" value="url打印"
@@ -196,10 +197,10 @@
            onclick="printer(1, 'file:///android_asset/OverLongReceipt.html', '', true, '0C:25:76:66:0B:17');"/>
 </p>
 <p>佳博蓝牙打印</br>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="价格签"
-           onclick="printer(301, 'file:///android_asset/PriceTag.html', '', false, '', null, true, 100);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="价格签透明"
-           onclick="printer(301, 'file:///android_asset/PriceTag.html', '', true, '', null, false, 100);"/>
+<input type="button" style="width:20%;height:40px;font-size:25px" value="价格签"
+       onclick="printer(301, 'file:///android_asset/PriceTag.html', '', false, '', null, true, 100);"/>
+<input type="button" style="width:20%;height:40px;font-size:25px" value="价格签透明"
+       onclick="printer(301, 'file:///android_asset/PriceTag.html', '', true, '', null, false, 100);"/>
 </p>
 
 <p>
@@ -208,41 +209,22 @@
 
 <p>钱箱</p>
 <p>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米自动"
-           onclick="openCashDrawer();"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米内置"
-           onclick="openCashDrawer('sunmi_buildin');"/>
-
-    <input type="button" style="width:30%;height:40px;font-size:25px" value="商米内置指令十六进制"
-           onclick="openCashDrawer('sunmi_buildin','', ['10','14','00','00','00'], true);"/>
-
-    <input type="button" style="width:30%;height:40px;font-size:25px" value="商米内置指令十进制"
-           onclick="openCashDrawer('sunmi_buildin','', ['16','20','00','00','00'], false);"/>
-
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米蓝牙"
-           onclick="openCashDrawer('sunmi_bt', '0C:25:76:66:0B:17');"/>
-
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米USB驱动器"
-           onclick="openCashDrawer('sunmi_drive_usb');"/>
-
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米蓝牙驱动器"
-           onclick="openCashDrawer('sunmi_drive_bt');"/>
-
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="蓝牙驱动器列表"
-           onclick="getBleCashDrawerDriver();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米自动" onclick="openCashDrawer();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米内置" onclick="openCashDrawer('sunmi_buildin');"/>
+    <input type="button" style="width:30%;height:40px;font-size:25px" value="商米内置指令十六进制" onclick="openCashDrawer('sunmi_buildin','', ['10','14','00','00','00'], true);"/>
+    <input type="button" style="width:30%;height:40px;font-size:25px" value="商米内置指令十进制" onclick="openCashDrawer('sunmi_buildin','', ['16','20','00','00','00'], false);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米蓝牙" onclick="openCashDrawer('sunmi_bt', '0C:25:76:66:0B:17');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米USB驱动器" onclick="openCashDrawer('sunmi_drive_usb');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="商米蓝牙驱动器" onclick="openCashDrawer('sunmi_drive_bt');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="蓝牙驱动器列表" onclick="getBleCashDrawerDriver();"/>
 </p>
 
 <p>商米外置扫描设备</br>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="开启条码"
-           onclick="extScanner(true, 'text');"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="开启支付码"
-           onclick="extScanner(true, 'pay');"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="关闭扫描"
-           onclick="extScanner(false);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="任意键连续"
-           onclick="extScanner(true, 'text', true, -1);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="Enter键连续"
-           onclick="extScanner(true, 'text', true, 0);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="开启条码" onclick="extScanner(true, 'text');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="开启支付码" onclick="extScanner(true, 'pay');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="关闭扫描" onclick="extScanner(false);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="任意键连续" onclick="extScanner(true, 'text', true, -1);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="Enter键连续" onclick="extScanner(true, 'text', true, 0);"/>
 </p>
 
 <p>商米报警灯</br>
@@ -256,24 +238,19 @@
 </p>
 
 <p>外置键盘</br>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="不拦截响应"
-           onclick="extKeyboard(true, 0);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="拦截响应"
-           onclick="extKeyboard(true, 1);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="不拦截响应" onclick="extKeyboard(true, 0);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="拦截响应" onclick="extKeyboard(true, 1);"/>
 </p>
 
 <p>软键盘遮挡设置</br>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="不遮挡(会顶布局上去)"
-           onclick="keyboardAdjust(true);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="不顶(会遮挡)"
-           onclick="keyboardAdjust(false);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="不遮挡(会顶布局上去)" onclick="keyboardAdjust(true);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="不顶(会遮挡)" onclick="keyboardAdjust(false);"/>
 </p>
 <p><input type="text" style="width:20%;height:40px;font-size:25px"/></p>
 
 <p></p>
 <p>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="测试多个响应"
-           onclick="test123();"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="测试多个响应" onclick="test123();"/>
 </p>
 
 
@@ -284,11 +261,17 @@
 
 <p>O2O</br>
     <input type="text" style="width:30%;height:40px;font-size:25px" id="token" placeholder="设置用户token" value="00fcfdc594c88ac52b37c18fc9c0611f"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="开启O2O"
-           onclick="setO2O(true);"/>
-    <input type="button" style="width:20%;height:40px;font-size:25px" value="关闭O2O"
-           onclick="setO2O(false);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="开启O2O" onclick="setO2O(true);"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="关闭O2O" onclick="setO2O(false);"/>
 
+</p>
+
+<p>悬浮窗</br>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="开启主悬浮窗" onclick="setFloating(true, 'master', 'file:///android_asset/JSSDK.html');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="关闭主悬浮窗" onclick="setFloating(false, 'master', '');"/>
+
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="开启副悬浮窗" onclick="setFloating(true, 'second', 'file:///android_asset/JSSDK.html');"/>
+    <input type="button" style="width:20%;height:40px;font-size:25px" value="关闭副悬浮窗" onclick="setFloating(false, 'second', '');"/>
 </p>
 
 </br></br></br></br></br></br></br></br>
@@ -299,7 +282,21 @@
 <!--document.addEventListener("DOMContentLoaded", () => {-->
 <!--    scannerShortcuts(true, true);-->
 <!--});-->
-window.onload = scannerShortcuts(true, false);
+        window.onload = scannerShortcuts(true, false);
+
+        //文件选择
+        function handleFileSelect(event) {
+            const file = event.target.files[0]; // 选择的文件
+            if (!file) return; // 防止空文件
+
+            const filePath = URL.createObjectURL(file);  // 获取浏览器本地临时的文件路径
+            showToast(filePath, 2000);
+            if (file.type.startsWith('image/')) {
+                setImage(filePath)
+            } else if (file.type.startsWith('video/')) {
+                setVideo(filePath)
+            }
+        }
 
         //组织邀请
         function activation() {
@@ -312,12 +309,6 @@ window.onload = scannerShortcuts(true, false);
         function privateInput() {
             var code = document.getElementById("private_input").value;
             labelURL("teamshare://ts.app/openwith?name=PrivateDeployments&code=" + code);
-        }
-
-        //自定义链接
-        function commonLink() {
-            var link = document.getElementById("common_link").value;
-            labelURL(link);
         }
 
         //开启O2O
@@ -336,6 +327,18 @@ window.onload = scannerShortcuts(true, false);
             data.delay = 3000;
             try {
                 bridge.callNative("setO2O", data);
+            } catch (ex) {
+            }
+        }
+
+        //悬浮窗
+        function setFloating(enable, tag, url) {
+            var data = new ScanData();
+            data.enable = enable;
+            data.tag = tag;
+            data.url = url;
+            try {
+                bridge.callNative("setFloating", data);
             } catch (ex) {
             }
         }
@@ -559,10 +562,8 @@ window.onload = scannerShortcuts(true, false);
         }
 
         //打开副屏
-        function openPresentation(link, scope) {
+        function openPresentation() {
             var data = new Presentation();
-            data.link = link;
-            data.scope = scope;
             try {
                 bridge.callNative("openPresentation", data);
             } catch (ex) {
@@ -572,9 +573,8 @@ window.onload = scannerShortcuts(true, false);
         //副屏实体
         function Presentation() {
             this.type = 1;
+<!--            this.link = "https://www.bilibili.com/video/BV1Qa411U7Ck/?spm_id_from=333.337.search-card.all.click";-->
             this.link = "https://blog.hjhrq1991.top/test/test.html";
-<!--            this.link = "file:///android_asset/Presentation.html";-->
-            this.scope = 1;
         }
 
         //通知副屏
@@ -826,17 +826,27 @@ window.onload = scannerShortcuts(true, false);
             //这里更新图片的显示
             var data = response.data;
             var tempFiles = data.tempFiles;
-            var tempFile = tempFiles[0]
+            var tempFile = tempFiles[0]; //以第一张为例子
+
+            if (!tempFile) return; // 防止空文件
             showToast(tempFile.tempFilePath, 2000);
-            setImage(tempFile.tempFilePath)
+
+            if (tempFile.fileType.startsWith('image')) {
+                setImage(tempFile.tempFilePath)
+            } else if (tempFile.fileType.startsWith('video')) {
+                setVideo(tempFile.tempFilePath)
+            }
         }
 
         function setImage(src) {
-            var image = document.getElementById("imageview");
-            image.src = src;
+            var imageview = document.getElementById("imageview");
+            imageview.src = src;
         }
 
-
+        function setVideo(src) {
+            var videoview = document.getElementById("videoview");
+            videoview.src = src;
+        }
 
 
         <!--    以下JS桥部分     -->
